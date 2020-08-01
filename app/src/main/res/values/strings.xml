@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Myunggukdan</string>
+
+<!-- Bottom navigation title   -->
+    <string name="bottom_navigation_home_title">Home</string>
+    <string name="bottom_navigation_ranking_title">Ranking</string>
+    <string name="bottom_navigation_setting_title">Setting</string>
+    
+<!-- FragHomeTabList   -->
+    <string name="frag_home_history_title">History</string>
+    <string name="frag_home_calendar_title">Calendar</string>
+    <string name="frag_home_statistics_title">Statistics</string>
+
 </resources>

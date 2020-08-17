@@ -1,14 +1,21 @@
 <resources>
     <string name="app_name">Myunggukdan</string>
 
-<!-- Bottom navigation title   -->
+    <!-- Bottom navigation title -->
     <string name="bottom_navigation_home_title">Home</string>
     <string name="bottom_navigation_ranking_title">Ranking</string>
     <string name="bottom_navigation_setting_title">Setting</string>
-    
-<!-- FragHomeTabList   -->
+
+    <!-- FragHomeTabList -->
     <string name="frag_home_history_title">History</string>
     <string name="frag_home_calendar_title">Calendar</string>
     <string name="frag_home_statistics_title">Statistics</string>
 
+    <!-- Button Description   -->
+    <string name="frag_home_history_add_waste">Add Waste</string>
+
+    <!-- TextView Description -->
+    <string name="frag_home_history_today_waste_history">Today\'s Waste History</string>
+    <string name="frag_home_history_waste_is_empty">The waste is empty!</string>
+    <string name="frag_home_history_overwasting_this_week">Overwasting this week</string>
 </resources>

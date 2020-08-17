@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Myunggukdan</string>
+
+    <!-- Bottom navigation title   -->
+    <string name="bottom_navigation_home_title">홈</string>
+    <string name="bottom_navigation_ranking_title">랭킹</string>
+    <string name="bottom_navigation_setting_title">세팅</string>
+
+    <!-- FragHomeTabList   -->
+    <string name="frag_home_history_title">내역</string>
+    <string name="frag_home_calendar_title">달력</string>
+    <string name="frag_home_statistics_title">통계</string>
+
+    <!-- Button Description   -->
+    <string name="frag_home_history_add_waste">낭비 추가하기</string>
+
+    <!-- TextView Description -->
+    <string name="frag_home_history_today_waste_history">오늘 낭비 내역</string>
+    <string name="frag_home_history_waste_is_empty">낭비 내역이 비어있어요!</string>
+    <string name="frag_home_history_overwasting_this_week">이번주 초과낭비는</string>
+</resources>

@@ -9,6 +9,7 @@ buildscript {
         glideVersion = '4.11.0'
         viewPagerVersion = '1.0.0'
         lifecyclektxVersion = '2.3.0-alpha06'
+        mpAndroidChartVersion = 'v3.1.0'
     }
     repositories {
         google()
@@ -25,6 +26,7 @@ buildscript {
 
 allprojects {
     repositories {
+        maven { url 'https://jitpack.io' }
         google()
         jcenter()
     }

@@ -1,19 +1,222 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <ScrollView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/frag_home_history_title"
-            android:textSize="@dimen/sp_32"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/home_history_wasteful_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_30"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:textColor="@color/colorBrownishGray"
+                    android:textSize="@dimen/sp_20"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="김낭비님, 오늘 하루" />
+
+                <TextView
+                    android:id="@+id/home_history_wasteful_total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/sp_24"
+                    app:layout_constraintStart_toStartOf="@id/home_history_wasteful_text"
+                    app:layout_constraintTop_toBottomOf="@id/home_history_wasteful_text"
+                    tools:text="15,000원" />
+
+                <TextView
+                    android:id="@+id/home_history_wasteful_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorGreyishBrown"
+                    android:textSize="@dimen/sp_20"
+                    app:layout_constraintBottom_toBottomOf="@id/home_history_wasteful_total"
+                    app:layout_constraintStart_toEndOf="@id/home_history_wasteful_total"
+                    app:layout_constraintTop_toTopOf="@id/home_history_wasteful_total"
+                    tools:text=" 을 낭비 했어요!" />
+
+                <TextView
+                    android:id="@+id/home_history_wasteful_tip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/dp_12"
+                    android:textColor="@android:color/black"
+                    android:layout_marginTop="@dimen/dp_19"
+                    app:layout_constraintTop_toBottomOf="@id/home_history_wasteful_total"
+                    app:layout_constraintStart_toStartOf="@id/home_history_wasteful_text"
+                    tools:text="오 마이갓! 감당 가능한 낭비인가요?"
+                    tools:ignore="SpUsage"
+                />
+
+                <ImageView
+                    android:id="@+id/home_history_character"
+                    android:layout_width="0dp"
+                    android:layout_height="235dp"
+                    android:layout_marginStart="@dimen/dp_30"
+                    android:layout_marginTop="@dimen/dp_18"
+                    android:layout_marginEnd="@dimen/dp_30"
+                    android:scaleType="fitCenter"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/home_history_wasteful_tip"
+                    tools:ignore="ContentDescription"
+                    tools:src="@drawable/test_2" />
+
+                <Button
+                    android:id="@+id/btn_home_history_add_wasteful"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_30"
+                    android:layout_marginTop="@dimen/dp_26"
+                    android:layout_marginEnd="@dimen/dp_30"
+                    android:background="@drawable/bg_btn_add_wasteful"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/sp_18"
+                    android:text="@string/frag_home_history_add_waste"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/home_history_character"
+                    tools:text="낭비 추가하기" />
+
+                <View
+                    android:id="@+id/home_history_divisor1"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_6"
+                    android:layout_marginTop="@dimen/dp_18"
+                    android:background="@color/colorWhiteGray"
+                    app:layout_constraintTop_toBottomOf="@id/btn_home_history_add_wasteful" />
+
+                <TextView
+                    android:id="@+id/home_history_chart_gt_average_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:textColor="@color/colorBrownishGray"
+                    android:textSize="@dimen/sp_14"
+                    android:text="@string/frag_home_history_overwasting_this_week"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/home_history_divisor1"
+                    tools:text="이번주 초과낭비는 " />
+
+                <TextView
+                    android:id="@+id/home_history_chart_gt_average_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/sp_16"
+                    app:layout_constraintBottom_toBottomOf="@id/home_history_chart_gt_average_description"
+                    app:layout_constraintStart_toEndOf="@id/home_history_chart_gt_average_description"
+                    app:layout_constraintTop_toTopOf="@id/home_history_chart_gt_average_description"
+                    tools:text="2회!" />
+
+
+                <com.github.mikephil.charting.charts.BarChart
+                    android:id="@+id/barchart"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:layout_marginBottom="@dimen/dp_20"
+                    app:layout_constraintHeight_percent="0.167"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/home_history_chart_gt_average_description"
+                    app:layout_constraintWidth_percent="0.72" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dp_2"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:background="@drawable/line_dotted"
+                    app:layout_constraintBottom_toBottomOf="@id/home_history_chart_average"
+                    app:layout_constraintEnd_toStartOf="@id/home_history_chart_average"
+                    app:layout_constraintStart_toStartOf="@id/barchart"
+                    app:layout_constraintTop_toTopOf="@id/home_history_chart_average" />
+
+                <TextView
+                    android:id="@+id/home_history_chart_average"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_round_text"
+                    android:textColor="@color/colorBrownishGray"
+                    android:textSize="@dimen/sp_10"
+                    app:layout_constraintBottom_toBottomOf="@id/barchart"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/barchart"
+                    app:layout_constraintTop_toTopOf="@id/barchart"
+                    tools:text="평균 15,000원" />
+
+                <View
+                    android:id="@+id/home_history_divisor2"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_6"
+                    android:layout_marginTop="@dimen/dp_18"
+                    android:background="@color/colorWhiteGray"
+                    app:layout_constraintTop_toBottomOf="@id/barchart" />
+
+                <TextView
+                    android:id="@+id/home_history_today_wasteful_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:textSize="@dimen/dp_16"
+                    android:textColor="@android:color/black"
+                    android:layout_marginTop="@dimen/dp_26"
+                    android:text="@string/frag_home_history_today_waste_history"
+                    app:layout_constraintTop_toBottomOf="@id/home_history_divisor2"
+                    app:layout_constraintStart_toStartOf="@id/home_history_chart_gt_average_description"
+                    tools:ignore="SpUsage"
+                    tools:text="오늘 낭비 내역"/>
+
+                <TextView
+                    android:id="@+id/home_history_today_wasteful_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_18"
+                    android:textSize="@dimen/dp_12"
+                    android:textColor="@color/colorBrownGray"
+                    app:layout_constraintStart_toStartOf="@id/home_history_today_wasteful_title"
+                    app:layout_constraintTop_toBottomOf="@id/home_history_today_wasteful_title"
+                    tools:text="2020.08.15"
+                    tools:ignore="SpUsage"/>
+                
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dp_1"
+                    android:layout_marginStart="@dimen/dp_18"
+                    android:layout_marginEnd="@dimen/dp_18"
+                    android:background="@color/colorBrownGray"
+                    app:layout_constraintTop_toTopOf="@id/home_history_today_wasteful_date"
+                    app:layout_constraintBottom_toBottomOf="@id/home_history_today_wasteful_date"
+                    app:layout_constraintStart_toEndOf="@id/home_history_today_wasteful_date"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <TextView
+                    android:id="@+id/home_history_today_wasteful_none_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_14"
+                    android:layout_marginBottom="70dp"
+                    android:text="@string/frag_home_history_waste_is_empty"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/home_history_today_wasteful_date"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

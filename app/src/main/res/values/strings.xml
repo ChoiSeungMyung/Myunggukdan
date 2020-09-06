@@ -18,4 +18,35 @@
     <string name="frag_home_history_today_waste_history">Today\'s Waste History</string>
     <string name="frag_home_history_waste_is_empty">The waste is empty!</string>
     <string name="frag_home_history_overwasting_this_week">Overwasting this week</string>
+    <string name="frag_add_waste_item_waste_amount_title">Waste amount</string>
+    <string name="frag_add_waste_item_waste_amount_eg">e.g.) 10 $</string>
+    <string name="frag_add_waste_item_memo_title">Is there any waste to write down as a memo?</string>
+    <string name="frag_add_waste_item_content_title">Waste Items and Notes</string>
+    <string name="frag_add_waste_item_memo_hint">Up to 15 characters with spaces</string>
+    <string name="dialog_inout_waste_item_amount_title">Please enter the amount</string>
+
+    <string name="waste_item_alcohol">Alcohol</string>
+    <string name="waste_item_cigarette">Cigarette</string>
+    <string name="waste_item_coffee">Coffee</string>
+    <string name="waste_item_shopping">Shopping</string>
+    <string name="waste_item_snack">Snack</string>
+    <string name="waste_item_taxi">Taxi</string>
+    <string name="waste_item_latefood">Late food</string>
+    <string name="waste_item_game">Game</string>
+    <string name="waste_item_etc">Etc</string>
+
+    <string name="frag_home_calendar_month_total_description">Waste amount</string>
+
+    <!-- ControlBar Description -->
+    <string name="add_waste">Add Waste</string>
+    
+    <!-- Calender Description -->
+    <string name="calender_month">Month</string>
+    <string name="calender_sun">SUN</string>
+    <string name="calender_mon">MON</string>
+    <string name="calender_tue">TUE</string>
+    <string name="calender_wed">WED</string>
+    <string name="calender_thu">THU</string>
+    <string name="calender_fri">FRI</string>
+    <string name="calender_sat">SAT</string>
 </resources>

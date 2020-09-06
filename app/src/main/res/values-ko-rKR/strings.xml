@@ -19,4 +19,35 @@
     <string name="frag_home_history_today_waste_history">오늘 낭비 내역</string>
     <string name="frag_home_history_waste_is_empty">낭비 내역이 비어있어요!</string>
     <string name="frag_home_history_overwasting_this_week">이번주 초과낭비는</string>
+    <string name="frag_add_waste_item_waste_amount_title">낭비 금액</string>
+    <string name="frag_add_waste_item_waste_amount_eg">예) 15,000원</string>
+    <string name="frag_add_waste_item_memo_title">메모로 기록해야 할 낭비가 있나요?</string>
+    <string name="frag_add_waste_item_content_title">낭비 항목 및 메모</string>
+    <string name="frag_add_waste_item_memo_hint">띄어쓰기 포함 최대 15자</string>
+    <string name="dialog_inout_waste_item_amount_title">금액을 입력하세요</string>
+
+    <string name="waste_item_alcohol">술</string>
+    <string name="waste_item_cigarette">담배</string>
+    <string name="waste_item_coffee">커피</string>
+    <string name="waste_item_shopping">충동 쇼핑</string>
+    <string name="waste_item_snack">군것질</string>
+    <string name="waste_item_taxi">택시</string>
+    <string name="waste_item_latefood">야식</string>
+    <string name="waste_item_game">게임</string>
+    <string name="waste_item_etc">직접 입력</string>
+
+    <string name="frag_home_calendar_month_total_description">낭비 금액</string>
+
+    <!-- ControlBar Description -->
+    <string name="add_waste">낭비추가</string>
+
+    <!-- Calender Description -->
+    <string name="calender_month">월</string>
+    <string name="calender_sun">일</string>
+    <string name="calender_mon">월</string>
+    <string name="calender_tue">화</string>
+    <string name="calender_wed">수</string>
+    <string name="calender_thu">목</string>
+    <string name="calender_fri">금</string>
+    <string name="calender_sat">토</string>
 </resources>

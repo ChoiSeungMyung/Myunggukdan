@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ViewStub
+            android:id="@+id/add_waste_item_controller_bar"
+            android:inflatedId="@id/add_waste_item_controller_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout="@layout/layout_controller_bar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/add_waste_item_waste_amount_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_21"
+            android:text="@string/frag_add_waste_item_waste_amount_title"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/dp_18"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/add_waste_item_controller_bar"
+            tools:ignore="SpUsage" />
+
+        <TextView
+            android:id="@+id/add_waste_item_waste_amout_input"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_12"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:background="@color/colorWhiteGrey"
+            android:paddingStart="@dimen/dp_6"
+            android:paddingTop="@dimen/dp_8"
+            android:paddingEnd="@dimen/dp_6"
+            android:paddingBottom="@dimen/dp_8"
+            android:text="@string/frag_add_waste_item_waste_amount_eg"
+            android:textColor="@color/colorGreyLight"
+            android:textSize="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/add_waste_item_waste_amount_title"
+            tools:ignore="SpUsage"
+            tools:text="예) 15,000원" />
+
+        <TextView
+            android:id="@+id/add_waste_item_content_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:textSize="@dimen/dp_18"
+            android:textColor="@android:color/black"
+            android:fontFamily="sans-serif-medium"
+            android:layout_marginTop="@dimen/dp_16"
+            android:text="@string/frag_add_waste_item_content_title"
+            app:layout_constraintTop_toBottomOf="@id/add_waste_item_waste_amout_input"
+            app:layout_constraintBottom_toTopOf="@id/add_waste_item_list"
+            tools:ignore="SpUsage"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/add_waste_item_list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/dp_12"
+            app:layout_constraintBottom_toTopOf="@id/add_waste_item_memo_title"
+            app:layout_constraintTop_toBottomOf="@id/add_waste_item_content_title">
+
+            <com.makeus.android.myunggukdan.ui.view.WasteItem
+                android:id="@+id/waste_item_alcohol"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/dp_16"
+                app:waste_item_icon="@drawable/ic_beer"
+                app:waste_item_text="@string/waste_item_alcohol"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/waste_item_cigarette"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/waste_item_shopping"/>
+
+            <com.makeus.android.myunggukdan.ui.view.WasteItem
+                android:id="@+id/waste_item_cigarette"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:waste_item_icon="@drawable/ic_cigarette"
+                app:waste_item_text="@string/waste_item_cigarette"
+                app:layout_constraintStart_toEndOf="@id/waste_item_alcohol"
+                app:layout_constraintTop_toTopOf="@id/waste_item_alcohol"
+                app:layout_constraintBottom_toBottomOf="@id/waste_item_alcohol"
+                app:layout_constraintEnd_toStartOf="@id/waste_item_coffee"/>
+
+            <com.makeus.android.myunggukdan.ui.view.WasteItem
+                android:id="@+id/waste_item_coffee"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="@dimen/dp_16"
+                app:waste_item_icon="@drawable/ic_coffee"
+                app:waste_item_text="@string/waste_item_coffee"
+                app:layout_constraintStart_toEndOf="@id/waste_item_cigarette"
+                app:layout_constraintTop_toTopOf="@id/waste_item_cigarette"
+                app:layout_constraintBottom_toBottomOf="@id/waste_item_cigarette"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <com.makeus.android.myunggukdan.ui.view.WasteItem
+                android:id="@+id/waste_item_shopping"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/dp_18"
+                app:waste_item_icon="@drawable/ic_shopping"
+                app:waste_item_text="@string/waste_item_shopping"
+                app:layout_constraintStart_toStartOf="@id/waste_item_alcohol"
+                app:layout_constraintTop_toBottomOf="@id/waste_item_alcohol"
+                app:layout_constraintBottom_toTopOf="@id/waste_item_latefood"
+                app:layout_constraintEnd_toStartOf="@id/waste_item_snack"/>
+
+            <com.makeus.android.myunggukdan.ui.view.WasteItem
+                android:id="@+id/waste_item_snack"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:waste_item_icon="@drawable/ic_snack"
+                app:waste_item_text="@string/waste_item_snack"
+                app:layout_constraintStart_toEndOf="@id/waste_item_shopping"
+                app:layout_constraintTop_toTopOf="@id/waste_item_shopping"
+                app:layout_constraintBottom_toBottomOf="@id/waste_item_shopping"
+                app:layout_constraintEnd_toStartOf="@id/waste_item_taxi"/>
+
+            <com.makeus.android.myunggukdan.ui.view.WasteItem
+                android:id="@+id/waste_item_taxi"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="@dimen/dp_16"
+                app:waste_item_icon="@drawable/ic_taxi"
+                app:waste_item_text="@string/waste_item_taxi"
+                app:layout_constraintStart_toEndOf="@id/waste_item_snack"
+                app:layout_constraintTop_toTopOf="@id/waste_item_snack"
+                app:layout_constraintBottom_toBottomOf="@id/waste_item_snack"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+
+            <com.makeus.android.myunggukdan.ui.view.WasteItem
+                android:id="@+id/waste_item_latefood"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/dp_18"
+                app:waste_item_icon="@drawable/ic_latefood"
+                app:waste_item_text="@string/waste_item_latefood"
+                app:layout_constraintStart_toStartOf="@id/waste_item_shopping"
+                app:layout_constraintTop_toBottomOf="@id/waste_item_shopping"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/waste_item_game"/>
+
+            <com.makeus.android.myunggukdan.ui.view.WasteItem
+                android:id="@+id/waste_item_game"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:waste_item_icon="@drawable/ic_game"
+                app:waste_item_text="@string/waste_item_game"
+                app:layout_constraintStart_toEndOf="@id/waste_item_latefood"
+                app:layout_constraintTop_toTopOf="@id/waste_item_latefood"
+                app:layout_constraintBottom_toBottomOf="@id/waste_item_latefood"
+                app:layout_constraintEnd_toStartOf="@id/waste_item_etc"/>
+
+            <com.makeus.android.myunggukdan.ui.view.WasteItem
+                android:id="@+id/waste_item_etc"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="@dimen/dp_16"
+                app:waste_item_icon="@drawable/ic_money"
+                app:waste_item_text="@string/waste_item_etc"
+                app:layout_constraintStart_toEndOf="@id/waste_item_game"
+                app:layout_constraintTop_toTopOf="@id/waste_item_game"
+                app:layout_constraintBottom_toBottomOf="@id/waste_item_game"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/add_waste_item_memo_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/frag_add_waste_item_memo_title"
+            android:layout_marginTop="@dimen/dp_10"
+            android:textSize="@dimen/dp_12"
+            android:textColor="@color/colorGreyMid"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginEnd="@dimen/dp_16"
+            app:layout_constraintTop_toBottomOf="@id/add_waste_item_list"
+            app:layout_constraintBottom_toTopOf="@id/add_waste_item_memo"
+            tools:text="메모로 기록해야 할 낭비가 있나요?"
+            tools:ignore="SpUsage"/>
+
+        <EditText
+            android:id="@+id/add_waste_item_memo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_12"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:paddingTop="@dimen/dp_8"
+            android:paddingBottom="@dimen/dp_8"
+            android:paddingStart="@dimen/dp_6"
+            android:paddingEnd="@dimen/dp_6"
+            android:background="@color/colorWhiteGrey"
+            android:hint="@string/frag_add_waste_item_memo_hint"
+            app:layout_constraintTop_toBottomOf="@id/add_waste_item_memo_title"
+            app:layout_constraintBottom_toTopOf="@id/btn_add_waste_item"/>
+
+        <Button
+            android:id="@+id/btn_add_waste_item"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_22"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:background="@drawable/bg_btn"
+            android:text="@string/frag_home_history_add_waste"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/dp_18"
+            android:layout_marginBottom="@dimen/dp_18"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/add_waste_item_memo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:ignore="SpUsage"
+            tools:text="낭비 추가하기" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

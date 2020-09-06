@@ -2,14 +2,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/homeItem"
-        android:icon="@drawable/ic_feedeo_add"
+        android:icon="@drawable/ic_home_on"
         android:title="@string/bottom_navigation_home_title" />
     <item
-        android:id="@+id/statisticsItem"
-        android:icon="@drawable/ic_edit_trim_on"
+        android:id="@+id/rankItem"
+        android:icon="@drawable/ic_rank_on"
         android:title="@string/bottom_navigation_ranking_title" />
     <item
         android:id="@+id/settingItem"
-        android:icon="@drawable/ic_camera_music"
+        android:icon="@drawable/ic_mypage_on"
         android:title="@string/bottom_navigation_setting_title" />
 </menu>

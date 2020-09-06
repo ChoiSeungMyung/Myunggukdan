@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#272727</color>
+    <color name="colorPrimary">#7B61FF</color>
     <color name="colorPrimaryDark">#B2B2B2</color>
     <color name="colorAccent">#272727</color>
-    <color name="colorWhiteGray">#F6F6F6</color>
-    <color name="colorLightGray">#F8F8F8</color>
+    <color name="colorWhiteGrey">#F6F6F6</color>
+    <color name="colorGreyVeryLight">#F9F9F9</color>
     <color name="colorGreyishBrown">#4B4B4B</color>
-    <color name="colorBrownishGray">#777676</color>
-    <color name="colorBrownGray">#8C8C8C</color>
+    <color name="colorBrownishGrey">#777676</color>
+    <color name="colorBrownGrey">#8C8C8C</color>
     <color name="colorCornFlower">#765FFF</color>
+    <color name="colorGreyLight">#CCCCCC</color>
+    <color name="colorBlackTwo">#232323</color>
+    <color name="colorGreyMid">#757575</color>
+    <color name="colorLavenderSub">#B090FF</color>
 
-    <color name="colorWhite100">#FFFFFFFF</color>
+    <color name="colorWhite100">#FFFFFF</color>
+    <color name="colorBlack100">#000000</color>
 </resources>

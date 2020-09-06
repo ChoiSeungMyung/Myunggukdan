@@ -3,6 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="viewModel"
+            type="com.makeus.android.myunggukdan.viewmodel.HistoryViewModel" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -15,16 +21,18 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
                 <TextView
                     android:id="@+id/home_history_wasteful_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/dp_30"
                     android:layout_marginStart="@dimen/dp_16"
-                    android:textColor="@color/colorBrownishGray"
-                    android:textSize="@dimen/sp_20"
+                    android:layout_marginTop="@dimen/dp_30"
+                    android:textColor="@color/colorBrownishGrey"
+                    android:textSize="@dimen/dp_20"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="SpUsage"
                     tools:text="김낭비님, 오늘 하루" />
 
                 <TextView
@@ -33,34 +41,44 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-medium"
                     android:textColor="@android:color/black"
-                    android:textSize="@dimen/sp_24"
+                    android:textSize="@dimen/dp_24"
                     app:layout_constraintStart_toStartOf="@id/home_history_wasteful_text"
                     app:layout_constraintTop_toBottomOf="@id/home_history_wasteful_text"
+                    tools:ignore="SpUsage"
                     tools:text="15,000원" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/shadow_wasteful"
+                    app:layout_constraintBottom_toBottomOf="@id/home_history_wasteful_total"
+                    app:layout_constraintStart_toStartOf="@id/home_history_wasteful_total"
+                    app:layout_constraintEnd_toEndOf="@id/home_history_wasteful_total"
+                    tools:ignore="ContentDescription" />
 
                 <TextView
                     android:id="@+id/home_history_wasteful_description"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/colorGreyishBrown"
-                    android:textSize="@dimen/sp_20"
+                    android:textSize="@dimen/dp_20"
                     app:layout_constraintBottom_toBottomOf="@id/home_history_wasteful_total"
                     app:layout_constraintStart_toEndOf="@id/home_history_wasteful_total"
                     app:layout_constraintTop_toTopOf="@id/home_history_wasteful_total"
+                    tools:ignore="SpUsage"
                     tools:text=" 을 낭비 했어요!" />
 
                 <TextView
                     android:id="@+id/home_history_wasteful_tip"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="@dimen/dp_12"
-                    android:textColor="@android:color/black"
                     android:layout_marginTop="@dimen/dp_19"
-                    app:layout_constraintTop_toBottomOf="@id/home_history_wasteful_total"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/dp_12"
                     app:layout_constraintStart_toStartOf="@id/home_history_wasteful_text"
-                    tools:text="오 마이갓! 감당 가능한 낭비인가요?"
+                    app:layout_constraintTop_toBottomOf="@id/home_history_wasteful_total"
                     tools:ignore="SpUsage"
-                />
+                    tools:text="오 마이갓! 감당 가능한 낭비인가요?" />
 
                 <ImageView
                     android:id="@+id/home_history_character"
@@ -74,7 +92,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/home_history_wasteful_tip"
                     tools:ignore="ContentDescription"
-                    tools:src="@drawable/test_2" />
+                    tools:src="@drawable/character_greycat_level_1" />
 
                 <Button
                     android:id="@+id/btn_home_history_add_wasteful"
@@ -83,13 +101,15 @@
                     android:layout_marginStart="@dimen/dp_30"
                     android:layout_marginTop="@dimen/dp_26"
                     android:layout_marginEnd="@dimen/dp_30"
-                    android:background="@drawable/bg_btn_add_wasteful"
-                    android:textColor="@android:color/white"
-                    android:textSize="@dimen/sp_18"
+                    android:background="@drawable/bg_btn"
+                    android:onClick="@{() -> viewModel.addWasteItem()}"
                     android:text="@string/frag_home_history_add_waste"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/dp_18"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/home_history_character"
+                    tools:ignore="SpUsage"
                     tools:text="낭비 추가하기" />
 
                 <View
@@ -97,7 +117,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dp_6"
                     android:layout_marginTop="@dimen/dp_18"
-                    android:background="@color/colorWhiteGray"
+                    android:background="@color/colorWhiteGrey"
                     app:layout_constraintTop_toBottomOf="@id/btn_home_history_add_wasteful" />
 
                 <TextView
@@ -106,11 +126,12 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/dp_16"
                     android:layout_marginTop="@dimen/dp_16"
-                    android:textColor="@color/colorBrownishGray"
-                    android:textSize="@dimen/sp_14"
                     android:text="@string/frag_home_history_overwasting_this_week"
+                    android:textColor="@color/colorBrownishGrey"
+                    android:textSize="@dimen/dp_14"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/home_history_divisor1"
+                    tools:ignore="SpUsage"
                     tools:text="이번주 초과낭비는 " />
 
                 <TextView
@@ -119,10 +140,11 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-medium"
                     android:textColor="@android:color/black"
-                    android:textSize="@dimen/sp_16"
+                    android:textSize="@dimen/dp_16"
                     app:layout_constraintBottom_toBottomOf="@id/home_history_chart_gt_average_description"
                     app:layout_constraintStart_toEndOf="@id/home_history_chart_gt_average_description"
                     app:layout_constraintTop_toTopOf="@id/home_history_chart_gt_average_description"
+                    tools:ignore="SpUsage"
                     tools:text="2회!" />
 
 
@@ -152,12 +174,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/border_round_text"
-                    android:textColor="@color/colorBrownishGray"
-                    android:textSize="@dimen/sp_10"
+                    android:textColor="@color/colorBrownishGrey"
+                    android:textSize="@dimen/dp_10"
                     app:layout_constraintBottom_toBottomOf="@id/barchart"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/barchart"
                     app:layout_constraintTop_toTopOf="@id/barchart"
+                    tools:ignore="SpUsage"
                     tools:text="평균 15,000원" />
 
                 <View
@@ -165,45 +188,45 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dp_6"
                     android:layout_marginTop="@dimen/dp_18"
-                    android:background="@color/colorWhiteGray"
+                    android:background="@color/colorWhiteGrey"
                     app:layout_constraintTop_toBottomOf="@id/barchart" />
 
                 <TextView
                     android:id="@+id/home_history_today_wasteful_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-medium"
-                    android:textSize="@dimen/dp_16"
-                    android:textColor="@android:color/black"
                     android:layout_marginTop="@dimen/dp_26"
+                    android:fontFamily="sans-serif-medium"
                     android:text="@string/frag_home_history_today_waste_history"
-                    app:layout_constraintTop_toBottomOf="@id/home_history_divisor2"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/dp_16"
                     app:layout_constraintStart_toStartOf="@id/home_history_chart_gt_average_description"
+                    app:layout_constraintTop_toBottomOf="@id/home_history_divisor2"
                     tools:ignore="SpUsage"
-                    tools:text="오늘 낭비 내역"/>
+                    tools:text="오늘 낭비 내역" />
 
                 <TextView
                     android:id="@+id/home_history_today_wasteful_date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dp_18"
+                    android:textColor="@color/colorBrownGrey"
                     android:textSize="@dimen/dp_12"
-                    android:textColor="@color/colorBrownGray"
                     app:layout_constraintStart_toStartOf="@id/home_history_today_wasteful_title"
                     app:layout_constraintTop_toBottomOf="@id/home_history_today_wasteful_title"
-                    tools:text="2020.08.15"
-                    tools:ignore="SpUsage"/>
-                
+                    tools:ignore="SpUsage"
+                    tools:text="2020.08.15" />
+
                 <View
                     android:layout_width="0dp"
                     android:layout_height="@dimen/dp_1"
                     android:layout_marginStart="@dimen/dp_18"
                     android:layout_marginEnd="@dimen/dp_18"
-                    android:background="@color/colorBrownGray"
-                    app:layout_constraintTop_toTopOf="@id/home_history_today_wasteful_date"
+                    android:background="@color/colorBrownGrey"
                     app:layout_constraintBottom_toBottomOf="@id/home_history_today_wasteful_date"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/home_history_today_wasteful_date"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    app:layout_constraintTop_toTopOf="@id/home_history_today_wasteful_date" />
 
                 <TextView
                     android:id="@+id/home_history_today_wasteful_none_text"
@@ -212,10 +235,10 @@
                     android:layout_marginTop="@dimen/dp_14"
                     android:layout_marginBottom="70dp"
                     android:text="@string/frag_home_history_waste_is_empty"
-                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/home_history_today_wasteful_date"
-                    app:layout_constraintBottom_toBottomOf="parent"/>
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/home_history_today_wasteful_date" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>

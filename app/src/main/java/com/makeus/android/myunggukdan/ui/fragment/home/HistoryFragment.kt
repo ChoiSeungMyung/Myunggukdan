@@ -17,23 +17,15 @@ import com.makeus.android.myunggukdan.R
 import com.makeus.android.myunggukdan.databinding.FragHomeHistoryBinding
 import com.makeus.android.myunggukdan.util.ColorSet
 import com.makeus.android.myunggukdan.util.getRandomWasteful
+import com.makeus.android.myunggukdan.viewmodel.HistoryViewModel
 import java.text.NumberFormat
 import java.text.SimpleDateFormat
 import java.time.LocalDate
 import java.util.*
 
-class HistoryFragment : Fragment() {
+class HistoryFragment(val historyViewModel: HistoryViewModel) : Fragment() {
     //    private val weeks = arrayOf("Mon", "Tue", "Web", "Thr", "Fri", "Sat", "Sun")
     private val weeks = arrayOf("월", "화", "수", "목", "금", "토", "일")
-    private val randomValue = listOf(
-        BarEntry(0f, getRandomWasteful()),
-        BarEntry(1f, getRandomWasteful()),
-        BarEntry(2f, getRandomWasteful()),
-        BarEntry(3f, getRandomWasteful()),
-        BarEntry(4f, getRandomWasteful()),
-        BarEntry(5f, getRandomWasteful()),
-        BarEntry(6f, getRandomWasteful())
-    )
 
     private lateinit var binding: FragHomeHistoryBinding
     override fun onCreateView(
@@ -49,8 +41,9 @@ class HistoryFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.run {
+            viewModel = historyViewModel
             Glide.with(view)
-                .load(R.drawable.test_2)
+                .load(R.drawable.character_greycat_level_1)
                 .into(homeHistoryCharacter)
 
             homeHistoryWastefulText.text = "김낭비님, 오늘 하루"
@@ -80,7 +73,7 @@ class HistoryFragment : Fragment() {
                     emptyList()
                 )
 
-                barChartSetValue()
+                barChartSetValue(emptyList())
 
                 setOnTouchListener { _, _ ->
                     true
@@ -90,15 +83,20 @@ class HistoryFragment : Fragment() {
             homeHistoryTodayWastefulDate.text =
                 SimpleDateFormat("yyyy.MM.dd", Locale.US).format(Date())
         }
+
+        historyViewModel.getWasteWeekItem()
+        historyViewModel.wasteWeekItemList.observe(viewLifecycleOwner, androidx.lifecycle.Observer {
+            drawChart(it)
+        })
     }
 
-    private fun barChartSetValue() {
+    private fun barChartSetValue(wasteWeekItemList: List<BarEntry>) {
         binding.barchart.apply {
             when (data.dataSetCount > 0) {
                 false -> {
                     val barData = BarData(
                         listOf(
-                            BarDataSet(randomValue, "Test DataSet").apply {
+                            BarDataSet(wasteWeekItemList, "Test DataSet").apply {
                                 colors = ColorSet.chartColorSet
                                 barShadowColor = Color.rgb(239, 239, 239)
                                 setDrawValues(false)
@@ -111,28 +109,40 @@ class HistoryFragment : Fragment() {
                     setFitBars(true)
 
                     invalidate()
-                    drawChart()
+                    drawChart(wasteWeekItemList)
                 }
             }
         }
     }
 
-    private fun drawChart() {
+    private fun drawChart(wasteWeekItemList: List<BarEntry>) {
         binding.apply {
             barchart.apply {
                 (data.getDataSetByIndex(0) as BarDataSet).run {
-                    values = randomValue
+                    values = wasteWeekItemList
                 }
                 data.notifyDataChanged()
                 notifyDataSetChanged()
             }
 
-            val chartAverage = randomValue.map { it.y }.average().toInt()
-            val gtChartAverage = randomValue.filter { it.y > chartAverage }.size
+            val chartAverage = wasteWeekItemList.map { it.y }.average().toInt()
+            val gtChartAverage = wasteWeekItemList.filter { it.y > chartAverage }.size
 
             homeHistoryChartGtAverageValue.text = "${gtChartAverage}회!"
             homeHistoryChartAverage.text =
                 "평균 ${NumberFormat.getNumberInstance(Locale.US).format(chartAverage)}원"
         }
+    }
+
+    companion object {
+            private var instance: HistoryFragment? = null
+
+            fun getInstance(historyViewModel: HistoryViewModel) = instance
+                ?: synchronized(this) {
+                    instance
+                        ?: HistoryFragment(historyViewModel).also { instance = it }
+                }
+
+            fun newInstance(historyViewModel: HistoryViewModel) = HistoryFragment(historyViewModel)
     }
 }

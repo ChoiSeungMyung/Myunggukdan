@@ -13,7 +13,7 @@
             android:id="@+id/item_deco"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_1"
-            android:background="@color/colorGreyLight"
+            android:background="@color/colorGreyVeryLight"
             app:layout_constraintTop_toTopOf="parent"/>
         <TextView
             android:id="@+id/item_calender_day"

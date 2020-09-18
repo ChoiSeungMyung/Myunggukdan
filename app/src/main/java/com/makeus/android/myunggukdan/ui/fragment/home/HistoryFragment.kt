@@ -23,7 +23,7 @@ import java.text.SimpleDateFormat
 import java.time.LocalDate
 import java.util.*
 
-class HistoryFragment(val historyViewModel: HistoryViewModel) : Fragment() {
+class HistoryFragment(private val historyViewModel: HistoryViewModel) : Fragment() {
     //    private val weeks = arrayOf("Mon", "Tue", "Web", "Thr", "Fri", "Sat", "Sun")
     private val weeks = arrayOf("월", "화", "수", "목", "금", "토", "일")
 
@@ -49,6 +49,7 @@ class HistoryFragment(val historyViewModel: HistoryViewModel) : Fragment() {
             homeHistoryWastefulText.text = "김낭비님, 오늘 하루"
             homeHistoryWastefulTotal.text = "15,000원"
             homeHistoryWastefulDescription.text = " 을 낭비했어요!"
+            homeHistoryWastefulTip.text = "오 마이갓! 감당 가능한 낭비인가요?"
 
             barchart.apply {
                 description.isEnabled = false
@@ -85,7 +86,7 @@ class HistoryFragment(val historyViewModel: HistoryViewModel) : Fragment() {
         }
 
         historyViewModel.getWasteWeekItem()
-        historyViewModel.wasteWeekItemList.observe(viewLifecycleOwner, androidx.lifecycle.Observer {
+        historyViewModel.wasteWeekItemList.observe(viewLifecycleOwner, {
             drawChart(it)
         })
     }
@@ -98,7 +99,7 @@ class HistoryFragment(val historyViewModel: HistoryViewModel) : Fragment() {
                         listOf(
                             BarDataSet(wasteWeekItemList, "Test DataSet").apply {
                                 colors = ColorSet.chartColorSet
-                                barShadowColor = Color.rgb(239, 239, 239)
+                                barShadowColor = Color.rgb(249, 249, 249)
                                 setDrawValues(false)
                             })
                     ).apply {

@@ -57,7 +57,8 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         main_bottom_navigation.setOnNavigationItemSelectedListener(this)
 
         historyViewModel.run {
-            addWastedItem.observe(this@MainActivity, Observer {
+            addWastedItem.observe(this@MainActivity, {
+                loge("$it")
                 when (it) {
                     true -> {
                         supportFragmentManager

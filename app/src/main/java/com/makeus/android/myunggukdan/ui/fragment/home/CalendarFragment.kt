@@ -21,6 +21,9 @@ import kotlinx.android.synthetic.main.frag_home_calendar.view.*
 import java.time.LocalDate
 import java.time.YearMonth
 
+/**
+ * TODO: Calendar 부분 리팩터 필요
+ */
 class CalendarFragment : Fragment() {
     private lateinit var binding: FragHomeCalendarBinding
     private var selectedDate: LocalDate? = null

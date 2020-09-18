@@ -11,7 +11,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite100">
 
         <ScrollView
             android:layout_width="match_parent"
@@ -83,11 +84,12 @@
                 <ImageView
                     android:id="@+id/home_history_character"
                     android:layout_width="0dp"
-                    android:layout_height="235dp"
+                    android:layout_height="0dp"
                     android:layout_marginStart="@dimen/dp_30"
                     android:layout_marginTop="@dimen/dp_18"
                     android:layout_marginEnd="@dimen/dp_30"
                     android:scaleType="fitCenter"
+                    app:layout_constraintHeight_percent="0.31"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/home_history_wasteful_tip"
@@ -106,6 +108,7 @@
                     android:text="@string/frag_home_history_add_waste"
                     android:textColor="@android:color/white"
                     android:textSize="@dimen/dp_18"
+                    android:stateListAnimator="@null"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/home_history_character"
@@ -117,7 +120,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dp_6"
                     android:layout_marginTop="@dimen/dp_18"
-                    android:background="@color/colorWhiteGrey"
+                    android:background="@color/colorGreyVeryLight"
                     app:layout_constraintTop_toBottomOf="@id/btn_home_history_add_wasteful" />
 
                 <TextView
@@ -139,8 +142,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-medium"
-                    android:textColor="@android:color/black"
+                    android:textColor="@color/colorPrimary"
                     android:textSize="@dimen/dp_16"
+                    android:layout_marginStart="@dimen/dp_4"
                     app:layout_constraintBottom_toBottomOf="@id/home_history_chart_gt_average_description"
                     app:layout_constraintStart_toEndOf="@id/home_history_chart_gt_average_description"
                     app:layout_constraintTop_toTopOf="@id/home_history_chart_gt_average_description"
@@ -157,7 +161,7 @@
                     app:layout_constraintHeight_percent="0.167"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/home_history_chart_gt_average_description"
-                    app:layout_constraintWidth_percent="0.72" />
+                    app:layout_constraintWidth_percent="0.8" />
 
                 <View
                     android:layout_width="0dp"
@@ -188,7 +192,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dp_6"
                     android:layout_marginTop="@dimen/dp_18"
-                    android:background="@color/colorWhiteGrey"
+                    android:background="@color/colorGreyVeryLight"
                     app:layout_constraintTop_toBottomOf="@id/barchart" />
 
                 <TextView
@@ -222,7 +226,7 @@
                     android:layout_height="@dimen/dp_1"
                     android:layout_marginStart="@dimen/dp_18"
                     android:layout_marginEnd="@dimen/dp_18"
-                    android:background="@color/colorBrownGrey"
+                    android:background="@color/colorGreyVeryLight"
                     app:layout_constraintBottom_toBottomOf="@id/home_history_today_wasteful_date"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/home_history_today_wasteful_date"

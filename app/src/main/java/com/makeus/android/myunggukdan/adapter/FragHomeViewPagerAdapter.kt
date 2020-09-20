@@ -5,6 +5,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.makeus.android.myunggukdan.ui.fragment.home.CalendarFragment
 import com.makeus.android.myunggukdan.ui.fragment.home.HistoryFragment
 import com.makeus.android.myunggukdan.ui.fragment.home.StatisticsFragment
+import com.makeus.android.myunggukdan.ui.listener.AddWasteItemListener
 import com.makeus.android.myunggukdan.viewmodel.HistoryViewModel
 
 class FragHomeViewPagerAdapter(

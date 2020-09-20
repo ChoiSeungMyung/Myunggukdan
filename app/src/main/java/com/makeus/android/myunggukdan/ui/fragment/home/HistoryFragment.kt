@@ -15,6 +15,8 @@ import com.github.mikephil.charting.data.BarEntry
 import com.github.mikephil.charting.formatter.ValueFormatter
 import com.makeus.android.myunggukdan.R
 import com.makeus.android.myunggukdan.databinding.FragHomeHistoryBinding
+import com.makeus.android.myunggukdan.extension.loge
+import com.makeus.android.myunggukdan.ui.listener.AddWasteItemListener
 import com.makeus.android.myunggukdan.util.ColorSet
 import com.makeus.android.myunggukdan.util.getRandomWasteful
 import com.makeus.android.myunggukdan.viewmodel.HistoryViewModel
@@ -24,8 +26,10 @@ import java.time.LocalDate
 import java.util.*
 
 class HistoryFragment(private val historyViewModel: HistoryViewModel) : Fragment() {
-    //    private val weeks = arrayOf("Mon", "Tue", "Web", "Thr", "Fri", "Sat", "Sun")
-    private val weeks = arrayOf("월", "화", "수", "목", "금", "토", "일")
+    private val weeks = when(Locale.getDefault().displayLanguage.contains("한국")) {
+        true -> arrayOf("월", "화", "수", "목", "금", "토", "일")
+        false -> arrayOf("Mon", "Tue", "Web", "Thr", "Fri", "Sat", "Sun")
+    }
 
     private lateinit var binding: FragHomeHistoryBinding
     override fun onCreateView(

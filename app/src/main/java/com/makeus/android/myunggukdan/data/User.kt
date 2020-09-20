@@ -1,7 +1,9 @@
 package com.makeus.android.myunggukdan.data
 
 data class User(
-    val id: String,
-    val userName: String,
-    val goal: Int
+    val email: String,
+    val nickName: String,
+    val password: String,
+    val goal: Int,
+    val initDay: Int
 )

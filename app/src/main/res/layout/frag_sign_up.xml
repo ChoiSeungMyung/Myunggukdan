@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ViewStub
+            android:id="@+id/frag_sign_up_controller_bar"
+            android:inflatedId="@id/frag_sign_up_controller_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout="@layout/layout_controller_bar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/frag_sign_up_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_37"
+            android:layout_marginStart="@dimen/dp_16"
+            android:fontFamily="sans-serif-medium"
+            android:textSize="@dimen/dp_20"
+            android:text="@string/frag_sign_up_description"
+            android:textColor="@color/colorBlack100"
+            app:layout_constraintTop_toBottomOf="@id/frag_sign_up_controller_bar"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="SpUsage"/>
+
+        <ImageView
+            android:id="@+id/emoji1"
+            android:layout_width="@dimen/dp_28"
+            android:layout_height="@dimen/dp_28"
+            android:src="@drawable/ic_emoji_laugh"
+            android:layout_marginStart="@dimen/dp_6"
+            app:layout_constraintBottom_toBottomOf="@id/frag_sign_up_description"
+            app:layout_constraintStart_toEndOf="@id/frag_sign_up_description"
+            tools:ignore="ContentDescription"/>
+
+        <ImageView
+            android:id="@+id/emoji2"
+            android:layout_width="@dimen/dp_28"
+            android:layout_height="@dimen/dp_28"
+            android:src="@drawable/ic_emoji_laugh"
+            android:layout_marginStart="@dimen/dp_6"
+            app:layout_constraintBottom_toBottomOf="@id/emoji1"
+            app:layout_constraintStart_toEndOf="@id/emoji1"
+            tools:ignore="ContentDescription"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

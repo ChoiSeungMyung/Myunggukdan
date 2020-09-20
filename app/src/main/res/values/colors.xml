@@ -15,5 +15,6 @@
     <color name="colorLavenderSub">#B090FF</color>
 
     <color name="colorWhite100">#FFFFFF</color>
+    <color name="colorWhite44">#B3FFFFFF</color>
     <color name="colorBlack100">#000000</color>
 </resources>

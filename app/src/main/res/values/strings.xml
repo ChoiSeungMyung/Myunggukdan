@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Myunggukdan</string>
+    <string name="app_name">Meowaste Fairy</string>
 
     <!-- Bottom navigation title -->
     <string name="bottom_navigation_home_title">Home</string>
@@ -13,6 +13,8 @@
 
     <!-- Button Description   -->
     <string name="frag_home_history_add_waste">Add Waste</string>
+    <string name="frag_choice_sign_in">It\'s my first time!</string>
+    <string name="frag_choice_sign_up">already signed up :)</string>
 
     <!-- TextView Description -->
     <string name="frag_home_history_today_waste_history">Today\'s Waste History</string>
@@ -36,6 +38,9 @@
     <string name="waste_item_etc">Etc</string>
 
     <string name="frag_home_calendar_month_total_description">Waste amount</string>
+
+    <string name="frag_splash_app_description">Where have you been wasting your money?\na friend who will cure your wasteful habits</string>
+    <string name="frag_sign_up_description">Long time no see:)\nNice to see you again!</string>
 
     <!-- ControlBar Description -->
     <string name="add_waste">Add Waste</string>

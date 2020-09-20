@@ -7,6 +7,9 @@
         <variable
             name="historyViewModelBinding"
             type="com.makeus.android.myunggukdan.viewmodel.HistoryViewModel" />
+        <variable
+            name="loginViewModelBinding"
+            type="com.makeus.android.myunggukdan.viewmodel.SignViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -26,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorWhiteGrey"
-            android:visibility="@{historyViewModelBinding.addWastedItem ? View.GONE : View.VISIBLE}"
+            android:visibility="@{historyViewModelBinding.addWastedItem || !loginViewModelBinding.loginCheck ? View.GONE : View.VISIBLE}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:menu="@menu/bottom_navigation_item" />
     </androidx.constraintlayout.widget.ConstraintLayout>

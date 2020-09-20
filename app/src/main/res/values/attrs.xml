@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="WasteItem">
+    <declare-styleable name="WasteItemView">
         <attr name="waste_item_icon" format="reference" />
         <attr name="waste_item_icon_size" format="dimension" />
         <attr name="waste_item_text" format="string" />

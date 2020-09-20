@@ -5,15 +5,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.tabs.TabLayoutMediator
 import com.makeus.android.myunggukdan.R
 import com.makeus.android.myunggukdan.adapter.FragHomeViewPagerAdapter
 import com.makeus.android.myunggukdan.databinding.FragHomeBinding
+import com.makeus.android.myunggukdan.extension.loge
+import com.makeus.android.myunggukdan.ui.listener.AddWasteItemListener
 import com.makeus.android.myunggukdan.viewmodel.HistoryViewModel
 import kotlinx.android.synthetic.main.frag_home.*
 
-class HomeFragment(private val historyViewModel: HistoryViewModel) : Fragment() {
+class HomeFragment(
+    val historyViewModel: HistoryViewModel
+) : Fragment() {
     private lateinit var binding: FragHomeBinding
 
     override fun onCreateView(
@@ -28,7 +33,8 @@ class HomeFragment(private val historyViewModel: HistoryViewModel) : Fragment() 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         frag_home_viewpager.adapter = FragHomeViewPagerAdapter(
-            this, historyViewModel)
+            this, historyViewModel
+        )
         TabLayoutMediator(frag_home_tab, frag_home_viewpager) { tab, position ->
             tab.text = when (position) {
                 0 -> getString(R.string.frag_home_history_title)
@@ -42,7 +48,9 @@ class HomeFragment(private val historyViewModel: HistoryViewModel) : Fragment() 
     companion object {
         private var instance: HomeFragment? = null
 
-        fun getInstance(historyViewModel: HistoryViewModel) = instance
+        fun getInstance(
+            historyViewModel: HistoryViewModel
+        ) = instance
             ?: synchronized(this) {
                 instance
                     ?: HomeFragment(historyViewModel).also { instance = it }

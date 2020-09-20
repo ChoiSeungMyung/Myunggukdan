@@ -108,5 +108,19 @@
             android:layout_marginTop="@dimen/dp_12"
             android:background="@color/colorGreyVeryLight"
             app:layout_constraintTop_toBottomOf="@id/frag_home_calendar_calendar" />
+
+        <TextView
+            android:id="@+id/home_calendar_select_day_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack100"
+            android:textSize="@dimen/dp_16"
+            android:fontFamily="sans-serif-medium"
+            android:layout_marginTop="@dimen/dp_17"
+            android:layout_marginStart="@dimen/dp_16"
+            app:layout_constraintTop_toBottomOf="@id/home_calendar_divisor1"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="15일 수요일"
+            tools:ignore="SpUsage"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

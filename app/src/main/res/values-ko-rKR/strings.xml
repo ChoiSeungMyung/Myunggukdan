@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Myunggukdan</string>
+    <string name="app_name">냥비요정</string>
 
     <!-- Bottom navigation title   -->
     <string name="bottom_navigation_home_title">홈</string>
@@ -14,6 +14,8 @@
 
     <!-- Button Description   -->
     <string name="frag_home_history_add_waste">낭비 추가하기</string>
+    <string name="frag_choice_sign_in">냥비요정은 처음이에요!</string>
+    <string name="frag_choice_sign_up">이미 가입되어 있어요:)</string>
 
     <!-- TextView Description -->
     <string name="frag_home_history_today_waste_history">오늘 낭비 내역</string>
@@ -37,6 +39,9 @@
     <string name="waste_item_etc">직접 입력</string>
 
     <string name="frag_home_calendar_month_total_description">낭비 금액</string>
+
+    <string name="frag_splash_app_description">낭비 어디까지 해봤냥?\n당신의 낭비습관을 고쳐줄 친구</string>
+    <string name="frag_sign_up_description">오랜만이에요:)\n다시 만나서 너무 기뻐요!</string>
 
     <!-- ControlBar Description -->
     <string name="add_waste">낭비추가</string>

@@ -4,7 +4,6 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.makeus.android.myunggukdan.extension.loge
 
 class SignViewModel(application: Application) : AndroidViewModel(application) {
     enum class SignState {

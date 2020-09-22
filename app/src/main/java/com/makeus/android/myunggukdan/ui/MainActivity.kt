@@ -9,22 +9,17 @@ import androidx.lifecycle.lifecycleScope
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.makeus.android.myunggukdan.R
 import com.makeus.android.myunggukdan.databinding.ActMainBinding
-import com.makeus.android.myunggukdan.extension.loge
 import com.makeus.android.myunggukdan.ui.fragment.AddWasteItemFragment
 import com.makeus.android.myunggukdan.ui.fragment.SplashFragment
 import com.makeus.android.myunggukdan.ui.fragment.home.HomeFragment
 import com.makeus.android.myunggukdan.ui.fragment.parent.RankingFragment
 import com.makeus.android.myunggukdan.ui.fragment.setting.SettingFragment
 import com.makeus.android.myunggukdan.ui.fragment.sign.ChoiceSignFragment
-import com.makeus.android.myunggukdan.ui.fragment.sign.SignUpFragment
+import com.makeus.android.myunggukdan.ui.fragment.sign.SignInFragment
 import com.makeus.android.myunggukdan.viewmodel.HistoryViewModel
 import com.makeus.android.myunggukdan.viewmodel.SignViewModel
 import com.makeus.android.myunggukdan.viewmodel.MainViewModel
 import kotlinx.android.synthetic.main.act_main.*
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener {
     private lateinit var binding: ActMainBinding
@@ -57,8 +52,8 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         ChoiceSignFragment.newInstance(signViewModel)
     }
 
-    private val signUpFragment by lazy {
-        SignUpFragment.newInstance(signViewModel)
+    private val signInFragment by lazy {
+        SignInFragment.newInstance(signViewModel)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -87,15 +82,16 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
                         .commit()
                 }
 
-                SignViewModel.SignState.SignIn -> {
+                SignViewModel.SignState.SignUp -> {
                     // 회원가입 프래그먼트
                 }
 
-                SignViewModel.SignState.SignUp -> {
+                SignViewModel.SignState.SignIn -> {
                     // 로그인 프래그먼트
                     supportFragmentManager
                         .beginTransaction()
-                        .replace(R.id.main_content_layout, signUpFragment)
+                        .addToBackStack(null)
+                        .replace(R.id.main_content_layout, signInFragment)
                         .commit()
                 }
 

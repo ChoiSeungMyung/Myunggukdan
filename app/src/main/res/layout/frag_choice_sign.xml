@@ -2,57 +2,60 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
     <data>
-        <import type="com.makeus.android.myunggukdan.viewmodel.SignViewModel.SignState"/>
+
+        <import type="com.makeus.android.myunggukdan.viewmodel.SignViewModel.SignState" />
+
         <variable
             name="signViewModelBinding"
             type="com.makeus.android.myunggukdan.viewmodel.SignViewModel" />
     </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:background="@color/colorWhite100"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite100">
 
         <ImageView
             android:id="@+id/frag_choice_image"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:scaleType="centerCrop"
             android:src="@drawable/bg_next_splash"
-            android:scaleType="fitXY"
             app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="ContentDescription"/>
-
-        <Button
-            android:id="@+id/btn_frag_choice_sign_in"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="@string/frag_choice_sign_in"
-            android:textColor="@color/colorWhite100"
-            android:background="@drawable/bg_btn"
-            android:layout_marginStart="@dimen/dp_16"
-            android:layout_marginEnd="@dimen/dp_16"
-            android:stateListAnimator="@null"
-            app:layout_constraintTop_toBottomOf="@id/frag_choice_image"
-            app:layout_constraintBottom_toTopOf="@id/btn_frag_choice_sign_up"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            tools:ignore="ContentDescription" />
 
         <Button
             android:id="@+id/btn_frag_choice_sign_up"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:background="@drawable/bg_btn"
+            android:stateListAnimator="@null"
+            android:text="@string/frag_choice_sign_in"
+            android:textColor="@color/colorWhite100"
+            app:layout_constraintBottom_toTopOf="@id/btn_frag_choice_sign_in"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/frag_choice_image" />
+
+        <Button
+            android:id="@+id/btn_frag_choice_sign_in"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:onClick="@{() -> signViewModelBinding.postValueSignState(SignState.SignIn)}"
+            android:stateListAnimator="@null"
             android:text="@string/frag_choice_sign_up"
             android:textColor="@color/colorPrimary"
             android:background="@drawable/bg_empty_btn"
-            android:layout_marginStart="@dimen/dp_16"
-            android:layout_marginEnd="@dimen/dp_16"
-            android:layout_marginTop="@dimen/dp_5"
-            android:stateListAnimator="@null"
-            android:onClick="@{() -> signViewModelBinding.postValueSignState(SignState.SignUp)}"
-            app:layout_constraintTop_toBottomOf="@id/btn_frag_choice_sign_in"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
-
+            app:layout_constraintTop_toBottomOf="@id/btn_frag_choice_sign_up" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

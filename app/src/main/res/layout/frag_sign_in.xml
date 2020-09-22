@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="signViewModelBinding"
+            type="com.makeus.android.myunggukdan.viewmodel.SignViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ViewStub
+            android:id="@+id/frag_sign_in_controller_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inflatedId="@id/frag_sign_in_controller_bar"
+            android:layout="@layout/layout_controller_bar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/frag_sign_in_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_37"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/frag_sign_in_description"
+            android:textColor="@color/colorBlack100"
+            android:textSize="@dimen/dp_20"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/frag_sign_in_controller_bar"
+            tools:ignore="SpUsage" />
+
+        <ImageView
+            android:id="@+id/emoji1"
+            android:layout_width="@dimen/dp_28"
+            android:layout_height="@dimen/dp_28"
+            android:layout_marginStart="@dimen/dp_6"
+            android:src="@drawable/ic_emoji_laugh"
+            app:layout_constraintBottom_toBottomOf="@id/frag_sign_in_description"
+            app:layout_constraintStart_toEndOf="@id/frag_sign_in_description"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/emoji2"
+            android:layout_width="@dimen/dp_28"
+            android:layout_height="@dimen/dp_28"
+            android:layout_marginStart="@dimen/dp_6"
+            android:src="@drawable/ic_emoji_laugh"
+            app:layout_constraintBottom_toBottomOf="@id/emoji1"
+            app:layout_constraintStart_toEndOf="@id/emoji1"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/frag_sign_in_email_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_16"
+            android:text="@string/email"
+            android:textColor="@color/colorBlack100"
+            android:textSize="@dimen/dp_16"
+            app:layout_constraintBottom_toBottomOf="@id/frag_sign_in_edit_email"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/frag_sign_in_edit_email"
+            tools:ignore="SpUsage" />
+
+        <EditText
+            android:id="@+id/frag_sign_in_edit_email"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_40"
+            android:layout_marginTop="@dimen/dp_55"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:autofillHints="@string/email_hint"
+            android:background="@color/colorGreyVeryLight"
+            android:hint="@string/email_hint"
+            android:inputType="textEmailAddress"
+            android:paddingStart="@dimen/dp_8"
+            android:textColorHint="@color/colorGreyLight"
+            android:textSize="@dimen/dp_14"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/frag_sign_in_description"
+            app:layout_constraintWidth_percent="0.67"
+            tools:ignore="RtlSymmetry,SpUsage" />
+
+        <ImageView
+            android:id="@+id/frag_sign_in_ic_email_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_6"
+            android:src="@drawable/ic_check_off"
+            app:layout_constraintBottom_toBottomOf="@id/frag_sign_in_edit_email"
+            app:layout_constraintEnd_toEndOf="@id/frag_sign_in_edit_email"
+            app:layout_constraintTop_toTopOf="@id/frag_sign_in_edit_email"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/frag_sign_in_password_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_16"
+            android:text="@string/password"
+            android:textColor="@color/colorBlack100"
+            android:textSize="@dimen/dp_16"
+            app:layout_constraintBottom_toBottomOf="@id/frag_sign_in_edit_password"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/frag_sign_in_edit_password"
+            tools:ignore="SpUsage" />
+
+        <EditText
+            android:id="@+id/frag_sign_in_edit_password"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_40"
+            android:layout_marginTop="@dimen/dp_32"
+            android:autofillHints="@string/email_hint"
+            android:background="@color/colorGreyVeryLight"
+            android:inputType="textPassword"
+            android:paddingStart="@dimen/dp_8"
+            android:textColorHint="@color/colorGreyLight"
+            android:textSize="@dimen/dp_14"
+            android:hint="@string/password_hint"
+            app:layout_constraintEnd_toEndOf="@id/frag_sign_in_edit_email"
+            app:layout_constraintStart_toStartOf="@id/frag_sign_in_edit_email"
+            app:layout_constraintTop_toBottomOf="@id/frag_sign_in_edit_email"
+            tools:ignore="RtlSymmetry,SpUsage" />
+
+        <ImageView
+            android:id="@+id/frag_sign_in_ic_password_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_6"
+            android:src="@drawable/ic_check_off"
+            app:layout_constraintBottom_toBottomOf="@id/frag_sign_in_edit_password"
+            app:layout_constraintEnd_toEndOf="@id/frag_sign_in_edit_password"
+            app:layout_constraintTop_toTopOf="@id/frag_sign_in_edit_password"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/frag_sign_in_find_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="@string/find_password"
+            android:textColor="@color/colorBlack100"
+            android:textSize="@dimen/dp_12"
+            app:layout_constraintStart_toStartOf="@id/frag_sign_in_edit_password"
+            app:layout_constraintTop_toBottomOf="@id/frag_sign_in_edit_password"
+            tools:ignore="SpUsage" />
+
+        <TextView
+            android:id="@+id/frag_sign_in_view_password_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_2"
+            android:text="@string/view_password"
+            android:textColor="@color/colorGreyMid"
+            android:textSize="@dimen/dp_12"
+            app:layout_constraintBottom_toBottomOf="@id/frag_sign_in_checkbox_view_password"
+            app:layout_constraintEnd_toStartOf="@id/frag_sign_in_checkbox_view_password"
+            app:layout_constraintTop_toTopOf="@id/frag_sign_in_checkbox_view_password"
+            tools:ignore="SpUsage" />
+
+        <CheckBox
+            android:id="@+id/frag_sign_in_checkbox_view_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="@id/frag_sign_in_find_password"
+            app:layout_constraintEnd_toEndOf="@id/frag_sign_in_edit_password"
+            app:layout_constraintTop_toBottomOf="@id/frag_sign_in_edit_password"
+            app:layout_constraintTop_toTopOf="@id/frag_sign_in_find_password" />
+
+        <Button
+            android:id="@+id/frag_btn_sign_in"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginBottom="@dimen/dp_24"
+            android:background="@drawable/bg_btn_off"
+            android:textSize="@dimen/dp_18"
+            android:textColor="@color/colorWhite100"
+            android:text="@string/frag_sign_in_long_time_no_see"
+            android:clickable="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:ignore="SpUsage"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -18,6 +18,12 @@
     <string name="frag_choice_sign_up">이미 가입되어 있어요:)</string>
 
     <!-- TextView Description -->
+    <string name="email">이메일</string>
+    <string name="password">비밀번호</string>
+    <string name="find_password"><u>비밀번호 찾기</u></string>
+    <string name="password_hint">영어 + 숫자 조합의 8자 이상</string>
+    <string name="view_password">비밀번호 보기</string>
+
     <string name="frag_home_history_today_waste_history">오늘 낭비 내역</string>
     <string name="frag_home_history_waste_is_empty">낭비 내역이 비어있어요!</string>
     <string name="frag_home_history_overwasting_this_week">이번주 초과낭비는</string>
@@ -41,7 +47,8 @@
     <string name="frag_home_calendar_month_total_description">낭비 금액</string>
 
     <string name="frag_splash_app_description">낭비 어디까지 해봤냥?\n당신의 낭비습관을 고쳐줄 친구</string>
-    <string name="frag_sign_up_description">오랜만이에요:)\n다시 만나서 너무 기뻐요!</string>
+    <string name="frag_sign_in_description">오랜만이에요:)\n다시 만나서 너무 기뻐요!</string>
+    <string name="frag_sign_in_long_time_no_see">오랜만이야!</string>
 
     <!-- ControlBar Description -->
     <string name="add_waste">낭비추가</string>

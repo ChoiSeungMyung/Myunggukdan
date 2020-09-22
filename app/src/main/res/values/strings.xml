@@ -17,6 +17,13 @@
     <string name="frag_choice_sign_up">already signed up :)</string>
 
     <!-- TextView Description -->
+    <string name="email">email</string>
+    <string name="password">password</string>
+    <string name="email_hint" translatable="false">adcdefg123@gmail.com</string>
+    <string name="password_hint">Password can be mixed with English and numbers(8–15)</string>
+    <string name="find_password"><u>Find password</u></string>
+    <string name="view_password">View password</string>
+
     <string name="frag_home_history_today_waste_history">Today\'s Waste History</string>
     <string name="frag_home_history_waste_is_empty">The waste is empty!</string>
     <string name="frag_home_history_overwasting_this_week">Overwasting this week</string>
@@ -40,7 +47,8 @@
     <string name="frag_home_calendar_month_total_description">Waste amount</string>
 
     <string name="frag_splash_app_description">Where have you been wasting your money?\na friend who will cure your wasteful habits</string>
-    <string name="frag_sign_up_description">Long time no see:)\nNice to see you again!</string>
+    <string name="frag_sign_in_description">Long time no see:)\nNice to see you again!</string>
+    <string name="frag_sign_in_long_time_no_see">Long time no see!</string>
 
     <!-- ControlBar Description -->
     <string name="add_waste">Add Waste</string>

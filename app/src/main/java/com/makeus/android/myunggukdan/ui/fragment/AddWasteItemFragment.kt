@@ -4,12 +4,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.fragment.app.Fragment
+import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.makeus.android.myunggukdan.R
 import com.makeus.android.myunggukdan.databinding.FragAddWasteitemBinding
 import com.makeus.android.myunggukdan.viewmodel.HistoryViewModel
 import kotlinx.android.synthetic.main.frag_add_wasteitem.*
 import kotlinx.android.synthetic.main.layout_controller_bar.view.*
+
 
 class AddWasteItemFragment(private val historyViewModel: HistoryViewModel) : Fragment() {
     private lateinit var binding: FragAddWasteitemBinding
@@ -31,7 +35,12 @@ class AddWasteItemFragment(private val historyViewModel: HistoryViewModel) : Fra
             }
         }
         binding.run {
-
+            btnAddWasteItem.setOnClickListener {
+                val dialogView: View = layoutInflater.inflate(R.layout.dialog_input_waste_item_amout, null)
+                val dialog = BottomSheetDialog(requireContext())
+                dialog.setContentView(dialogView)
+                dialog.show()
+            }
         }
     }
 

@@ -74,7 +74,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         }
 
         signViewModel.signState.observe(this@MainActivity, {
-            when(it) {
+            when (it) {
                 SignViewModel.SignState.SignSuccess -> {
                     supportFragmentManager
                         .beginTransaction()
@@ -93,6 +93,14 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
                         .addToBackStack(null)
                         .replace(R.id.main_content_layout, signInFragment)
                         .commit()
+                }
+
+                SignViewModel.SignState.SignFindPassword -> {
+                    // 비밀번호 찾기 프래그먼트
+                }
+
+                SignViewModel.SignState.SignFail -> {
+                    // 로그인 실패 로직
                 }
 
                 else -> {

@@ -11,7 +11,8 @@ class SignViewModel(application: Application) : AndroidViewModel(application) {
         SignUp,
         SignIn,
         SignFail,
-        SignSuccess
+        SignSuccess,
+        SignFindPassword
     }
     private val _signState: MutableLiveData<SignState> = MutableLiveData(SignState.SignFail)
     val signState: LiveData<SignState> = _signState

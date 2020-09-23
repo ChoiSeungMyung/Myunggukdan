@@ -29,8 +29,8 @@ class SplashFragment(private val signViewModel: SignViewModel) : Fragment() {
 
         CoroutineScope(Dispatchers.IO).launch {
             delay(1000)
-//            signViewModel.postValueSignState(SignViewModel.SignState.SignSuccess)
-            signViewModel.postValueSignState(SignViewModel.SignState.SignFail)
+            signViewModel.postValueSignState(SignViewModel.SignState.SignSuccess)
+//            signViewModel.postValueSignState(SignViewModel.SignState.SignFail)
         }
 
         /**

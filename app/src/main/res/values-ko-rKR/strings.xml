@@ -12,7 +12,15 @@
     <string name="frag_home_calendar_title">달력</string>
     <string name="frag_home_statistics_title">통계</string>
 
+    <!-- Calculator Description   -->
+    <string name="one_dollar">+1천</string>
+    <string name="five_dollar">+5천</string>
+    <string name="ten_dollar">+1만</string>
+    <string name="fifty_dollar">+5만</string>
+    <string name="hundred_dollar">+10만</string>
+
     <!-- Button Description   -->
+    <string name="complete">입력완료</string>
     <string name="frag_home_history_add_waste">낭비 추가하기</string>
     <string name="frag_choice_sign_in">냥비요정은 처음이에요!</string>
     <string name="frag_choice_sign_up">이미 가입되어 있어요:)</string>

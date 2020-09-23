@@ -82,6 +82,7 @@
             android:paddingStart="@dimen/dp_8"
             android:textColorHint="@color/colorGreyLight"
             android:textSize="@dimen/dp_14"
+            android:text="@={signViewModelBinding.email}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/frag_sign_in_description"
             app:layout_constraintWidth_percent="0.67"
@@ -122,6 +123,7 @@
             android:paddingStart="@dimen/dp_8"
             android:textColorHint="@color/colorGreyLight"
             android:textSize="@dimen/dp_14"
+            android:text="@={signViewModelBinding.password}"
             android:hint="@string/password_hint"
             app:layout_constraintEnd_toEndOf="@id/frag_sign_in_edit_email"
             app:layout_constraintStart_toStartOf="@id/frag_sign_in_edit_email"
@@ -186,7 +188,8 @@
             android:textColor="@color/colorWhite100"
             android:text="@string/frag_sign_in_long_time_no_see"
             android:clickable="false"
+            android:onClick="@{() -> signViewModelBinding.trySignIn()}"
             app:layout_constraintBottom_toBottomOf="parent"
-            tools:ignore="SpUsage"/>
+            tools:ignore="SpUsage" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -4,6 +4,7 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.makeus.android.myunggukdan.extension.loge
 
 class SignViewModel(application: Application) : AndroidViewModel(application) {
     enum class SignState {
@@ -12,27 +13,43 @@ class SignViewModel(application: Application) : AndroidViewModel(application) {
         SignFail,
         SignSuccess
     }
-
     private val _signState: MutableLiveData<SignState> = MutableLiveData(SignState.SignFail)
     val signState: LiveData<SignState> = _signState
+
+    private var enableEmail: Boolean = false
+    private var enablePassword: Boolean = false
+
+    private val _enableSignIn: MutableLiveData<Boolean> = MutableLiveData(false)
+    val enableSignIn: LiveData<Boolean> = _enableSignIn
+
+    val email: MutableLiveData<String> = MutableLiveData()
+    val password: MutableLiveData<String> = MutableLiveData()
 
     private val _loginCheck: MutableLiveData<Boolean> = MutableLiveData(false)
     val loginCheck: LiveData<Boolean> = _loginCheck
 
-    private fun postValueIsLogin(isLogin: Boolean) {
-        _loginCheck.postValue(isLogin)
+    fun postValueEnableEmail(isEnable: Boolean) {
+        enableEmail = isEnable
+    }
+    fun postValueEnablePassword(isEnable: Boolean) {
+        enablePassword = isEnable
+    }
+
+    fun getValueEnableSignIn() {
+        _enableSignIn.postValue(enableEmail && enablePassword)
     }
 
     fun postValueSignState(state: SignState) {
         when (state) {
-            SignState.SignFail, SignState.SignIn, SignState.SignUp -> postValueIsLogin(false)
-            SignState.SignSuccess -> postValueIsLogin(true)
+            SignState.SignFail, SignState.SignIn, SignState.SignUp -> _loginCheck.postValue(false)
+            SignState.SignSuccess -> _loginCheck.postValue(true)
         }
         _signState.postValue(state)
     }
 
-    fun trySignUp() {
+    fun trySignIn() {
         // 로그인 시도
+        loge("로그인 시도 :::: id = ${email.value} , password = ${password.value}")
 //        when(response) {
 //            true -> {
 //

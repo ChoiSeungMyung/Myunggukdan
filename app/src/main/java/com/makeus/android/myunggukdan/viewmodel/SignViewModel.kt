@@ -14,6 +14,7 @@ class SignViewModel(application: Application) : AndroidViewModel(application) {
         SignSuccess,
         SignFindPassword
     }
+    val testToast: MutableLiveData<String> = MutableLiveData()
     private val _signState: MutableLiveData<SignState> = MutableLiveData(SignState.SignFail)
     val signState: LiveData<SignState> = _signState
 
@@ -44,6 +45,7 @@ class SignViewModel(application: Application) : AndroidViewModel(application) {
         when (state) {
             SignState.SignFail, SignState.SignIn, SignState.SignUp -> _loginCheck.postValue(false)
             SignState.SignSuccess -> _loginCheck.postValue(true)
+            else -> _loginCheck.postValue(false)
         }
         _signState.postValue(state)
     }
@@ -51,6 +53,8 @@ class SignViewModel(application: Application) : AndroidViewModel(application) {
     fun trySignIn() {
         // 로그인 시도
         loge("로그인 시도 :::: id = ${email.value} , password = ${password.value}")
+        testToast.postValue("id = ${email.value}\npassword = ${password.value}")
+        postValueSignState(SignState.SignSuccess)
 //        when(response) {
 //            true -> {
 //

@@ -65,11 +65,11 @@
                     android:textColor="@color/colorGreyishBrown"
                     android:textSize="@dimen/dp_20"
                     android:fontFamily="@font/bmdohyeon"
+                    android:text="@string/frag_home_history_wasteful_description"
                     app:layout_constraintBottom_toBottomOf="@id/home_history_wasteful_total"
                     app:layout_constraintStart_toEndOf="@id/home_history_wasteful_total"
                     app:layout_constraintTop_toTopOf="@id/home_history_wasteful_total"
-                    tools:ignore="SpUsage"
-                    tools:text=" 을 낭비 했어요!" />
+                    tools:ignore="SpUsage" />
 
                 <TextView
                     android:id="@+id/home_history_wasteful_tip"
@@ -78,10 +78,10 @@
                     android:layout_marginTop="@dimen/dp_19"
                     android:textColor="@android:color/black"
                     android:textSize="@dimen/dp_12"
+                    android:text="@string/frag_home_history_wasteful_tip"
                     app:layout_constraintStart_toStartOf="@id/home_history_wasteful_text"
                     app:layout_constraintTop_toBottomOf="@id/home_history_wasteful_total"
-                    tools:ignore="SpUsage"
-                    tools:text="오 마이갓! 감당 가능한 낭비인가요?" />
+                    tools:ignore="SpUsage" />
 
                 <ImageView
                     android:id="@+id/home_history_character"
@@ -90,7 +90,7 @@
                     android:layout_marginStart="@dimen/dp_30"
                     android:layout_marginTop="@dimen/dp_18"
                     android:layout_marginEnd="@dimen/dp_30"
-                    android:scaleType="fitCenter"
+                    android:scaleType="centerCrop"
                     app:layout_constraintHeight_percent="0.31"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"

@@ -35,18 +35,6 @@
                 tools:ignore="SpUsage"
                 tools:text="9월"/>
 
-            <ImageButton
-                android:id="@+id/frag_home_calendar_down"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_down"
-                android:background="@null"
-                android:layout_marginStart="@dimen/dp_10"
-                app:layout_constraintTop_toTopOf="@id/frag_home_calendar_month"
-                app:layout_constraintBottom_toBottomOf="@id/frag_home_calendar_month"
-                app:layout_constraintStart_toEndOf="@id/frag_home_calendar_month"
-                tools:ignore="ContentDescription" />
-
             <View
                 android:id="@+id/frag_home_calendar_divider"
                 android:layout_width="@dimen/dp_1"

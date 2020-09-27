@@ -1,4 +1,4 @@
-package com.makeus.android.myunggukdan.ui.fragment.parent
+package com.makeus.android.myunggukdan.ui.fragment.ranking
 
 import android.os.Bundle
 import android.view.LayoutInflater

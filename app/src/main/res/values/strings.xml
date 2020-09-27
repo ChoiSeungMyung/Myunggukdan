@@ -31,10 +31,18 @@
     <string name="password_hint">Password can be mixed with English and numbers(8–15)</string>
     <string name="find_password"><u>Find password</u></string>
     <string name="view_password">View password</string>
+    <string name="money_unit">%s$</string>
 
+    <string name="frag_home_history_wasteful_text">%s</string>
+    <string name="frag_home_history_wasteful_description">wasted a day today.</string>
+    <string name="frag_home_history_wasteful_tip">Oh, my God! Is that a manageable waste?</string>
+    <string name="frag_home_history_chart_gt_average_value">%d times!</string>
+    <string name="frag_home_history_chart_average">an average of %s$</string>
     <string name="frag_home_history_today_waste_history">Today\'s Waste History</string>
     <string name="frag_home_history_waste_is_empty">The waste is empty!</string>
     <string name="frag_home_history_overwasting_this_week">Overwasting this week</string>
+    <string name="frag_home_calendar_month">%d-%d</string>
+
     <string name="frag_add_waste_item_waste_amount_title">Waste amount</string>
     <string name="frag_add_waste_item_waste_amount_eg">e.g.) 10 $</string>
     <string name="frag_add_waste_item_memo_title">Is there any waste to write down as a memo?</string>

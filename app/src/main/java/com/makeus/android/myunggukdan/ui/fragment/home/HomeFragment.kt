@@ -32,9 +32,13 @@ class HomeFragment(
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        frag_home_viewpager.adapter = FragHomeViewPagerAdapter(
-            this, historyViewModel
-        )
+        frag_home_viewpager.apply {
+            adapter = FragHomeViewPagerAdapter(
+                this@HomeFragment, historyViewModel
+            )
+//            isSaveEnabled = false
+        }
+
         TabLayoutMediator(frag_home_tab, frag_home_viewpager) { tab, position ->
             tab.text = when (position) {
                 0 -> getString(R.string.frag_home_history_title)

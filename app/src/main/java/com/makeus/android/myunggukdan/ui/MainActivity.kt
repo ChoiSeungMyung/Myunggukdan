@@ -2,6 +2,7 @@ package com.makeus.android.myunggukdan.ui
 
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
@@ -12,7 +13,7 @@ import com.makeus.android.myunggukdan.databinding.ActMainBinding
 import com.makeus.android.myunggukdan.ui.fragment.AddWasteItemFragment
 import com.makeus.android.myunggukdan.ui.fragment.SplashFragment
 import com.makeus.android.myunggukdan.ui.fragment.home.HomeFragment
-import com.makeus.android.myunggukdan.ui.fragment.parent.RankingFragment
+import com.makeus.android.myunggukdan.ui.fragment.ranking.RankingFragment
 import com.makeus.android.myunggukdan.ui.fragment.setting.SettingFragment
 import com.makeus.android.myunggukdan.ui.fragment.sign.ChoiceSignFragment
 import com.makeus.android.myunggukdan.ui.fragment.sign.SignInFragment
@@ -37,7 +38,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
     }
 
     private val homeFragment by lazy {
-        HomeFragment.getInstance(historyViewModel)
+        HomeFragment.newInstance(historyViewModel)
     }
 
     private val addWasteItemFragment by lazy {
@@ -101,6 +102,10 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
 
                 SignViewModel.SignState.SignFail -> {
                     // 로그인 실패 로직
+                    supportFragmentManager
+                        .beginTransaction()
+                        .replace(R.id.main_content_layout, choiceSignFragment)
+                        .commit()
                 }
 
                 else -> {
@@ -126,6 +131,11 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
                 }
             }
         })
+
+
+        signViewModel.testToast.observe(this, {
+            Toast.makeText(this, it, Toast.LENGTH_LONG).show()
+        })
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
@@ -134,7 +144,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
                 supportFragmentManager
                     .beginTransaction()
                     .replace(
-                        R.id.main_content_layout, homeFragment
+                        R.id.main_content_layout, HomeFragment.newInstance(historyViewModel)
                     )
                     .commit()
             }

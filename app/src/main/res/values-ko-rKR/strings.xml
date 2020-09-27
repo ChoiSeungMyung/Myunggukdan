@@ -31,10 +31,17 @@
     <string name="find_password"><u>비밀번호 찾기</u></string>
     <string name="password_hint">영어 + 숫자 조합의 8자 이상</string>
     <string name="view_password">비밀번호 보기</string>
+    <string name="money_unit">%s원</string>
 
+    <string name="frag_home_history_wasteful_text">%s님 오늘 하루</string>
+    <string name="frag_home_history_wasteful_description"> 을 낭비했어요!</string>
+    <string name="frag_home_history_wasteful_tip">오 마이갓! 감당 가능한 낭비인가요?</string>
+    <string name="frag_home_history_chart_gt_average_value">%d회!</string>
+    <string name="frag_home_history_chart_average">평균 %s원</string>
     <string name="frag_home_history_today_waste_history">오늘 낭비 내역</string>
     <string name="frag_home_history_waste_is_empty">낭비 내역이 비어있어요!</string>
     <string name="frag_home_history_overwasting_this_week">이번주 초과낭비는</string>
+    <string name="frag_home_calendar_month">%d년 %d월</string>
     <string name="frag_add_waste_item_waste_amount_title">낭비 금액</string>
     <string name="frag_add_waste_item_waste_amount_eg">예) 15,000원</string>
     <string name="frag_add_waste_item_memo_title">메모로 기록해야 할 낭비가 있나요?</string>

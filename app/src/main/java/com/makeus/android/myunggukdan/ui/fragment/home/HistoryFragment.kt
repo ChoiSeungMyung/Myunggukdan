@@ -16,6 +16,7 @@ import com.github.mikephil.charting.formatter.ValueFormatter
 import com.makeus.android.myunggukdan.R
 import com.makeus.android.myunggukdan.databinding.FragHomeHistoryBinding
 import com.makeus.android.myunggukdan.extension.loge
+import com.makeus.android.myunggukdan.extension.toPrice
 import com.makeus.android.myunggukdan.ui.listener.AddWasteItemListener
 import com.makeus.android.myunggukdan.util.ColorSet
 import com.makeus.android.myunggukdan.util.getRandomWasteful
@@ -50,10 +51,10 @@ class HistoryFragment(private val historyViewModel: HistoryViewModel) : Fragment
                 .load(R.drawable.character_greycat_level_1)
                 .into(homeHistoryCharacter)
 
-            homeHistoryWastefulText.text = "김낭비님, 오늘 하루"
-            homeHistoryWastefulTotal.text = "15,000원"
-            homeHistoryWastefulDescription.text = " 을 낭비했어요!"
-            homeHistoryWastefulTip.text = "오 마이갓! 감당 가능한 낭비인가요?"
+            val testNickName = "김낭비"
+            val testTotalText = 15_000
+            homeHistoryWastefulText.text = String.format(resources.getString(R.string.frag_home_history_wasteful_text), testNickName)
+            homeHistoryWastefulTotal.text = String.format(resources.getString(R.string.money_unit), testTotalText.toPrice())
 
             barchart.apply {
                 description.isEnabled = false
@@ -133,9 +134,9 @@ class HistoryFragment(private val historyViewModel: HistoryViewModel) : Fragment
             val chartAverage = wasteWeekItemList.map { it.y }.average().toInt()
             val gtChartAverage = wasteWeekItemList.filter { it.y > chartAverage }.size
 
-            homeHistoryChartGtAverageValue.text = "${gtChartAverage}회!"
+            homeHistoryChartGtAverageValue.text = String.format(resources.getString(R.string.frag_home_history_chart_gt_average_value), gtChartAverage)
             homeHistoryChartAverage.text =
-                "평균 ${NumberFormat.getNumberInstance(Locale.US).format(chartAverage)}원"
+                String.format(resources.getString(R.string.frag_home_history_chart_average), chartAverage.toPrice())
         }
     }
 

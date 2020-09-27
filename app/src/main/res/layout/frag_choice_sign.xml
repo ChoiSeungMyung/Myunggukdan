@@ -24,6 +24,7 @@
             android:scaleType="centerCrop"
             android:src="@drawable/bg_next_splash"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btn_frag_choice_sign_up"
             tools:ignore="ContentDescription" />
 
         <Button
@@ -32,6 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/dp_16"
             android:layout_marginEnd="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_5"
             android:background="@drawable/bg_btn"
             android:stateListAnimator="@null"
             android:text="@string/frag_choice_sign_in"
@@ -46,13 +48,14 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/dp_16"
-            android:layout_marginTop="@dimen/dp_5"
             android:layout_marginEnd="@dimen/dp_16"
             android:onClick="@{() -> signViewModelBinding.postValueSignState(SignState.SignIn)}"
             android:stateListAnimator="@null"
             android:text="@string/frag_choice_sign_up"
             android:textColor="@color/colorPrimary"
             android:background="@drawable/bg_empty_btn"
+            android:layout_marginTop="@dimen/dp_18"
+            android:layout_marginBottom="@dimen/dp_24"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

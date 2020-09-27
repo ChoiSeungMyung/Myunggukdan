@@ -17,4 +17,16 @@ class StatisticsFragment : Fragment() {
         binding = FragHomeStatisticsBinding.inflate(inflater, container, false)
         return binding.root
     }
+
+    companion object {
+        private var instance: StatisticsFragment? = null
+
+        fun getInstance() = instance
+            ?: synchronized(this) {
+                instance
+                    ?: StatisticsFragment().also { instance = it }
+            }
+
+        fun newInstance() = StatisticsFragment()
+    }
 }

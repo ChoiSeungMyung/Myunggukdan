@@ -4,10 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import com.google.android.material.bottomsheet.BottomSheetBehavior
-import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.makeus.android.myunggukdan.R
 import com.makeus.android.myunggukdan.databinding.FragAddWasteitemBinding
 import com.makeus.android.myunggukdan.viewmodel.HistoryViewModel
@@ -26,20 +23,29 @@ class AddWasteItemFragment(private val historyViewModel: HistoryViewModel) : Fra
         return binding.root
     }
 
+    private var showInputView = false
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         add_waste_item_controller_bar.inflate().apply {
             controller_bar_title.text = getString(R.string.add_waste)
-            btn_back.setOnClickListener{
+            btn_back.setOnClickListener {
                 activity?.onBackPressed()
             }
         }
         binding.run {
-            btnAddWasteItem.setOnClickListener {
-                val dialogView: View = layoutInflater.inflate(R.layout.dialog_input_waste_item_amout, null)
-                val dialog = BottomSheetDialog(requireContext())
-                dialog.setContentView(dialogView)
-                dialog.show()
+            add_waste_item_waste_amount_input.setOnClickListener {
+                showInputView = !showInputView
+                when (showInputView) {
+                    true -> {
+                        dialogWrapper.visibility = View.VISIBLE
+                        frag_add_wasteitem_root.isClickable = false
+                    }
+                    false -> {
+                        dialogWrapper.visibility = View.GONE
+                        frag_add_wasteitem_root.isClickable = true
+                    }
+                }
             }
         }
     }

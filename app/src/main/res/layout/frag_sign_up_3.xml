@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="signViewModelBinding"
+            type="com.makeus.android.myunggukdan.viewmodel.SignViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/frag_sign_up_3_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_37"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/frag_sign_up_3_title"
+            android:textColor="@color/colorBlack100"
+            android:textSize="@dimen/dp_20"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SpUsage" />
+
+        <ImageView
+            android:id="@+id/emoji1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_6"
+            android:src="@drawable/ic_emoji_lovely"
+            app:layout_constraintBottom_toBottomOf="@id/frag_sign_up_3_title"
+            app:layout_constraintStart_toEndOf="@id/frag_sign_up_3_title"
+            tools:ignore="ContentDescription" />
+
+        <com.makeus.android.myunggukdan.ui.view.NestedScrollableHost
+            android:id="@+id/frag_sign_up_3_view_pager_wrapper"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/frag_sign_up_3_indicator_wrapper"
+            app:layout_constraintTop_toBottomOf="@id/frag_sign_up_3_title">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/frag_sign_up_3_view_pager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_36"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:layout_marginBottom="@dimen/dp_22"
+                />
+        </com.makeus.android.myunggukdan.ui.view.NestedScrollableHost>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/frag_sign_up_3_indicator_wrapper"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/frag_sign_up_3_btn_choice"
+            app:layout_constraintTop_toBottomOf="@id/frag_sign_up_3_view_pager_wrapper">
+            <ImageView
+                android:id="@+id/frag_sign_up_indicator_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/indicator_on"
+                android:layout_marginEnd="@dimen/dp_4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/frag_sign_up_indicator_2"
+                tools:ignore="ContentDescription"/>
+            <ImageView
+                android:id="@+id/frag_sign_up_indicator_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/indicator_off"
+                android:layout_marginStart="@dimen/dp_4"
+                app:layout_constraintStart_toEndOf="@id/frag_sign_up_indicator_1"
+                app:layout_constraintTop_toTopOf="@id/frag_sign_up_indicator_1"
+                app:layout_constraintBottom_toBottomOf="@id/frag_sign_up_indicator_1"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:ignore="ContentDescription"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:id="@+id/frag_sign_up_3_btn_choice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:layout_marginBottom="@dimen/dp_24"
+            android:background="@drawable/bg_btn"
+            android:stateListAnimator="@null"
+            android:text="@string/frag_sign_up_3_btn_choice"
+            android:textColor="@color/colorWhite100"
+            android:textSize="@dimen/dp_18"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:ignore="SpUsage" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

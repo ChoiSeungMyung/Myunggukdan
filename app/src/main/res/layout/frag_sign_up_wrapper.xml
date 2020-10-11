@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frag_sign_up_wrapper_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ProgressBar
+            android:id="@+id/frag_sign_up_wrapper_progress"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_8"
+            android:progressDrawable="@drawable/progress_bar"
+            android:max="3"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:progress="1"/>
+
+        <ViewStub
+            android:id="@+id/frag_sign_up_controller_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inflatedId="@id/frag_sign_up_controller_bar"
+            android:layout="@layout/layout_controller_bar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/frag_sign_up_wrapper_progress" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/frag_sign_up_view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/frag_sign_up_controller_bar" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

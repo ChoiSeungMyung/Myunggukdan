@@ -17,6 +17,8 @@ import com.makeus.android.myunggukdan.ui.fragment.ranking.RankingFragment
 import com.makeus.android.myunggukdan.ui.fragment.setting.SettingFragment
 import com.makeus.android.myunggukdan.ui.fragment.sign.ChoiceSignFragment
 import com.makeus.android.myunggukdan.ui.fragment.sign.SignInFragment
+import com.makeus.android.myunggukdan.ui.fragment.sign.up.SignUpThirdFragment
+import com.makeus.android.myunggukdan.ui.fragment.sign.up.SignUpWrapperFragment
 import com.makeus.android.myunggukdan.viewmodel.HistoryViewModel
 import com.makeus.android.myunggukdan.viewmodel.SignViewModel
 import com.makeus.android.myunggukdan.viewmodel.MainViewModel
@@ -57,6 +59,10 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         SignInFragment.newInstance(signViewModel)
     }
 
+    private val signUpWrapperFragmnet by lazy {
+        SignUpWrapperFragment.newInstance(signViewModel)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.act_main)
@@ -70,7 +76,8 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         lifecycleScope.launchWhenResumed {
             supportFragmentManager
                 .beginTransaction()
-                .replace(R.id.main_content_layout, splashFragment)
+//                .replace(R.id.main_content_layout, splashFragment)
+                .replace(R.id.main_content_layout, SignUpWrapperFragment(signViewModel))
                 .commit()
         }
 
@@ -84,6 +91,11 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
                 }
 
                 SignViewModel.SignState.SignUp -> {
+                    supportFragmentManager
+                        .beginTransaction()
+                        .addToBackStack(null)
+                        .replace(R.id.main_content_layout, signUpWrapperFragmnet)
+                        .commit()
                     // 회원가입 프래그먼트
                 }
 

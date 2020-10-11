@@ -4,7 +4,12 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.makeus.android.myunggukdan.data.SignInResult
 import com.makeus.android.myunggukdan.extension.loge
+import com.makeus.android.myunggukdan.worker.RetrofitHelper
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class SignViewModel(application: Application) : AndroidViewModel(application) {
     enum class SignState {
@@ -20,16 +25,24 @@ class SignViewModel(application: Application) : AndroidViewModel(application) {
 
     private var enableEmail: Boolean = false
     private var enablePassword: Boolean = false
+    private var enableNickName: Boolean = false
 
     private val _enableSignIn: MutableLiveData<Boolean> = MutableLiveData(false)
     val enableSignIn: LiveData<Boolean> = _enableSignIn
 
+    private val _enableSignUp: MutableLiveData<Boolean> = MutableLiveData(false)
+    val enableSignUp: LiveData<Boolean> = _enableSignUp
+
+    val nickname: MutableLiveData<String> = MutableLiveData()
     val email: MutableLiveData<String> = MutableLiveData()
     val password: MutableLiveData<String> = MutableLiveData()
 
     private val _loginCheck: MutableLiveData<Boolean> = MutableLiveData(false)
     val loginCheck: LiveData<Boolean> = _loginCheck
 
+    fun postValueEnableNickName(isEnable: Boolean) {
+        enableNickName = isEnable
+    }
     fun postValueEnableEmail(isEnable: Boolean) {
         enableEmail = isEnable
     }
@@ -39,6 +52,10 @@ class SignViewModel(application: Application) : AndroidViewModel(application) {
 
     fun getValueEnableSignIn() {
         _enableSignIn.postValue(enableEmail && enablePassword)
+    }
+
+    fun getValueEnableSignUp() {
+        _enableSignUp.postValue(enableNickName && enableEmail && enablePassword)
     }
 
     fun postValueSignState(state: SignState) {
@@ -51,18 +68,21 @@ class SignViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     fun trySignIn() {
-        // 로그인 시도
-        loge("로그인 시도 :::: id = ${email.value} , password = ${password.value}")
-        testToast.postValue("id = ${email.value}\npassword = ${password.value}")
-        postValueSignState(SignState.SignSuccess)
-//        when(response) {
-//            true -> {
-//
-//            }
-//
-//            false -> {
-//
-//            }
-//        }
+        if (email.value != null && password.value != null) {
+            RetrofitHelper.signIn(email.value!!, password.value!!).enqueue(object : Callback<SignInResult> {
+                override fun onResponse(
+                    call: Call<SignInResult>,
+                    response: Response<SignInResult>
+                ) {
+                    loge(response.body().toString())
+                    postValueSignState(SignState.SignSuccess)
+                }
+
+                override fun onFailure(call: Call<SignInResult>, t: Throwable) {
+                    postValueSignState(SignState.SignFail)
+                }
+            })
+        }
     }
+
 }

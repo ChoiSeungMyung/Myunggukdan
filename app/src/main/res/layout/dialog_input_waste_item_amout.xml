@@ -369,6 +369,7 @@
                 android:text="@string/complete"
                 android:textColor="@color/colorWhite100"
                 android:textSize="@dimen/dp_18"
+                android:stateListAnimator="@null"
                 app:layout_constraintBottom_toBottomOf="parent"
                 tools:ignore="SpUsage" />
         </androidx.constraintlayout.widget.ConstraintLayout>

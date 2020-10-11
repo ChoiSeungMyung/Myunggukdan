@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="signViewModelBinding"
+            type="com.makeus.android.myunggukdan.viewmodel.SignViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/frag_sign_up_2_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_37"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/frag_sign_up_2_title"
+            android:textColor="@color/colorBlack100"
+            android:textSize="@dimen/dp_20"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SpUsage" />
+
+        <ImageView
+            android:id="@+id/emoji1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_6"
+            android:src="@drawable/ic_emoji_normal"
+            app:layout_constraintBottom_toBottomOf="@id/frag_sign_up_2_title"
+            app:layout_constraintStart_toEndOf="@id/frag_sign_up_2_title"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/emoji2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_6"
+            android:src="@drawable/ic_emoji_normal"
+            app:layout_constraintBottom_toBottomOf="@id/emoji1"
+            app:layout_constraintStart_toEndOf="@id/emoji1"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/frag_sign_up_2_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="@string/frag_sign_up_2_description"
+            android:textColor="@color/colorGreyMid"
+            android:textSize="@dimen/dp_12"
+            app:layout_constraintStart_toStartOf="@id/frag_sign_up_2_title"
+            app:layout_constraintTop_toBottomOf="@id/frag_sign_up_2_title"
+            tools:ignore="SpUsage" />
+
+        <TextView
+            android:id="@+id/frag_sign_up_2_set_amount_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_36"
+            android:text="@string/frag_sign_up_2_set_amount_title"
+            android:textColor="@color/colorBlack100"
+            android:textSize="@dimen/dp_14"
+            app:layout_constraintStart_toStartOf="@id/frag_sign_up_2_description"
+            app:layout_constraintTop_toBottomOf="@id/frag_sign_up_2_description"
+            tools:ignore="SpUsage" />
+
+        <TextView
+            android:id="@+id/frag_sign_up_2_set_amount_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_6"
+            android:text="@string/frag_sign_up_2_set_amount_description"
+            android:textColor="@color/colorGreyMid"
+            android:textSize="@dimen/dp_12"
+            app:layout_constraintStart_toStartOf="@id/frag_sign_up_2_set_amount_title"
+            app:layout_constraintTop_toBottomOf="@id/frag_sign_up_2_set_amount_title"
+            tools:ignore="SpUsage" />
+
+        <EditText
+            android:id="@+id/frag_sign_up_2_edit_set_amount"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_40"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_18"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:background="@color/colorGreyVeryLight"
+            android:hint="@string/set_amount_hint"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:paddingStart="@dimen/dp_6"
+            android:textColorHint="@color/colorGreyLight"
+            android:textSize="@dimen/dp_14"
+            app:layout_constraintTop_toBottomOf="@id/frag_sign_up_2_set_amount_description"
+            tools:ignore="RtlSymmetry,SpUsage" />
+
+        <ImageView
+            android:id="@+id/frag_sign_up_2_ic_amount_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_6"
+            android:src="@drawable/ic_check_off"
+            app:layout_constraintBottom_toBottomOf="@id/frag_sign_up_2_edit_set_amount"
+            app:layout_constraintEnd_toEndOf="@id/frag_sign_up_2_edit_set_amount"
+            app:layout_constraintTop_toTopOf="@id/frag_sign_up_2_edit_set_amount"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/frag_sign_up_2_set_start_day_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_40"
+            android:text="@string/frag_sign_up_2_set_start_day_title"
+            android:textColor="@color/colorBlack100"
+            android:textSize="@dimen/dp_16"
+            app:layout_constraintStart_toStartOf="@id/frag_sign_up_2_set_amount_description"
+            app:layout_constraintTop_toBottomOf="@id/frag_sign_up_2_edit_set_amount"
+            tools:ignore="SpUsage" />
+
+        <TextView
+            android:id="@+id/frag_sign_up_2_set_start_day_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_6"
+            android:text="@string/frag_sign_up_2_set_start_day_description"
+            android:textColor="@color/colorGreyMid"
+            android:textSize="@dimen/dp_12"
+            app:layout_constraintStart_toStartOf="@id/frag_sign_up_2_set_start_day_title"
+            app:layout_constraintTop_toBottomOf="@id/frag_sign_up_2_set_start_day_title"
+            tools:ignore="SpUsage" />
+
+        <TextView
+            android:id="@+id/frag_sign_up_2_every_month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/every_month"
+            android:layout_marginTop="@dimen/dp_18"
+            android:textColor="@color/colorBlack100"
+            android:textSize="@dimen/dp_16"
+            app:layout_constraintStart_toStartOf="@id/frag_sign_up_2_set_start_day_description"
+            app:layout_constraintTop_toBottomOf="@id/frag_sign_up_2_set_start_day_description"
+            tools:ignore="SpUsage"/>
+
+        <EditText
+            android:id="@+id/frag_sign_up_2_edit_start_day"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_40"
+            android:background="@color/colorGreyVeryLight"
+            android:textColorHint="@color/colorGreyLight"
+            android:hint="@string/set_every_month_hint"
+            android:paddingStart="@dimen/dp_6"
+            android:textSize="@dimen/dp_14"
+            android:layout_marginStart="@dimen/dp_18"
+            android:inputType="number"
+            android:importantForAutofill="no"
+            app:layout_constraintWidth_percent="0.31"
+            app:layout_constraintStart_toEndOf="@id/frag_sign_up_2_every_month"
+            app:layout_constraintTop_toTopOf="@id/frag_sign_up_2_every_month"
+            app:layout_constraintBottom_toBottomOf="@id/frag_sign_up_2_every_month"
+            tools:ignore="RtlSymmetry,SpUsage" />
+
+        <ImageView
+            android:id="@+id/frag_sign_up_ic_start_day_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_6"
+            android:src="@drawable/ic_check_off"
+            app:layout_constraintTop_toTopOf="@id/frag_sign_up_2_edit_start_day"
+            app:layout_constraintBottom_toBottomOf="@id/frag_sign_up_2_edit_start_day"
+            app:layout_constraintEnd_toEndOf="@id/frag_sign_up_2_edit_start_day"
+            tools:ignore="ContentDescription"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/frag_sign_up_2_notice"
+            android:gravity="center"
+            android:textColor="@color/colorGreyMid"
+            android:textSize="@dimen/dp_12"
+            android:layout_marginBottom="@dimen/dp_21"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="SpUsage"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

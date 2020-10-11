@@ -1,7 +1,6 @@
 package com.makeus.android.myunggukdan.ui.fragment.sign
 
 import android.os.Bundle
-import android.text.InputType
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
 import android.view.LayoutInflater
@@ -11,7 +10,6 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.makeus.android.myunggukdan.R
 import com.makeus.android.myunggukdan.databinding.FragSignInBinding
-import com.makeus.android.myunggukdan.extension.loge
 import com.makeus.android.myunggukdan.viewmodel.SignViewModel
 import kotlinx.android.synthetic.main.frag_sign_in.*
 import kotlinx.android.synthetic.main.layout_controller_bar.view.*

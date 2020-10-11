@@ -4,19 +4,259 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frag_setting_root"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite100">
 
         <TextView
+            android:id="@+id/frag_setting_main_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/bottom_navigation_setting_title"
-            android:textSize="@dimen/dp_32"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_20"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/my"
+            android:textColor="@color/colorBlack100"
+            android:textSize="@dimen/dp_22"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="SpUsage" />
 
+        <TextView
+            android:id="@+id/frag_setting_main_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="@string/frag_setting_main_description"
+            android:textColor="@color/colorBlack100"
+            android:textSize="@dimen/dp_20"
+            app:layout_constraintStart_toStartOf="@id/frag_setting_main_title"
+            app:layout_constraintTop_toBottomOf="@id/frag_setting_main_title"
+            tools:ignore="SpUsage" />
+
+        <TextView
+            android:id="@+id/frag_setting_main_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_8"
+            android:fontFamily="sans-serif-medium"
+            android:text="김낭비님!"
+            android:textColor="@color/colorBlack100"
+            android:textSize="@dimen/dp_20"
+            app:layout_constraintStart_toStartOf="@id/frag_setting_main_description"
+            app:layout_constraintTop_toBottomOf="@id/frag_setting_main_description"
+            tools:ignore="SpUsage" />
+
+        <ImageView
+            android:id="@+id/emoji1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_6"
+            android:src="@drawable/ic_emoji_lovely"
+            app:layout_constraintBottom_toBottomOf="@id/frag_setting_main_user_name"
+            app:layout_constraintStart_toEndOf="@id/frag_setting_main_user_name"
+            app:layout_constraintTop_toTopOf="@id/frag_setting_main_user_name"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/frag_setting_user_info_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_28"
+            android:text="@string/frag_setting_main_user_info_title"
+            android:textColor="@color/colorGreyMid"
+            android:textSize="@dimen/dp_12"
+            app:layout_constraintStart_toStartOf="@id/frag_setting_main_user_name"
+            app:layout_constraintTop_toBottomOf="@id/frag_setting_main_user_name"
+            tools:ignore="SpUsage" />
+
+        <TextView
+            android:id="@+id/frag_setting_main_set_waste"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_16"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/frag_setting_main_set_waste"
+            android:textColor="@color/colorBlack100"
+            android:textSize="@dimen/dp_14"
+            app:layout_constraintEnd_toEndOf="@id/frag_setting_main_set_waste_arrow"
+            app:layout_constraintStart_toStartOf="@id/frag_setting_user_info_title"
+            app:layout_constraintTop_toBottomOf="@id/frag_setting_user_info_title"
+            tools:ignore="SpUsage" />
+
+        <ImageView
+            android:id="@+id/frag_setting_main_set_waste_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:src="@drawable/ic_arrow_right"
+            app:layout_constraintBottom_toBottomOf="@id/frag_setting_main_set_waste"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/frag_setting_main_set_waste"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/frag_setting_main_set_user"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/frag_setting_main_set_user"
+            android:textColor="@color/colorBlack100"
+            android:textSize="@dimen/dp_14"
+            app:layout_constraintEnd_toEndOf="@id/frag_setting_main_set_waste"
+            app:layout_constraintStart_toStartOf="@id/frag_setting_main_set_waste"
+            app:layout_constraintTop_toBottomOf="@id/frag_setting_main_set_waste"
+            tools:ignore="SpUsage" />
+
+        <ImageView
+            android:id="@+id/frag_setting_main_set_user_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_right"
+            app:layout_constraintBottom_toBottomOf="@id/frag_setting_main_set_user"
+            app:layout_constraintEnd_toEndOf="@id/frag_setting_main_set_waste_arrow"
+            app:layout_constraintTop_toTopOf="@id/frag_setting_main_set_user"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/frag_setting_main_set_push"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/frag_setting_main_set_push"
+            android:textColor="@color/colorBlack100"
+            android:textSize="@dimen/dp_14"
+            app:layout_constraintStart_toStartOf="@id/frag_setting_main_set_user"
+            app:layout_constraintTop_toBottomOf="@id/frag_setting_main_set_user"
+            tools:ignore="SpUsage" />
+
+        <ImageView
+            android:id="@+id/frag_setting_main_push_toggle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:src="@drawable/ic_toggle_off"
+            app:layout_constraintBottom_toBottomOf="@id/frag_setting_main_set_push"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/frag_setting_main_set_push"
+            tools:ignore="ContentDescription" />
+
+        <View
+            android:id="@+id/frag_setting_main_divider_1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_16"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:background="@color/colorGreyVeryLight"
+            app:layout_constraintTop_toBottomOf="@id/frag_setting_main_set_push" />
+
+        <TextView
+            android:id="@+id/frag_setting_main_app_info_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/frag_setting_main_app_info_title"
+            android:textColor="@color/colorGreyMid"
+            android:textSize="@dimen/dp_12"
+            app:layout_constraintStart_toStartOf="@id/frag_setting_main_divider_1"
+            app:layout_constraintTop_toBottomOf="@id/frag_setting_main_divider_1"
+            tools:ignore="SpUsage" />
+
+        <TextView
+            android:id="@+id/frag_setting_main_app_version_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_16"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/frag_setting_main_app_version_title"
+            android:textColor="@color/colorBlack100"
+            android:textSize="@dimen/dp_14"
+            app:layout_constraintStart_toStartOf="@id/frag_setting_main_app_info_title"
+            app:layout_constraintTop_toBottomOf="@id/frag_setting_main_app_info_title"
+            tools:ignore="SpUsage" />
+
+        <TextView
+            android:id="@+id/frag_setting_main_app_version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:text="1.1"
+            android:textColor="@color/colorGreyMid"
+            android:textSize="@dimen/dp_12"
+            app:layout_constraintBottom_toBottomOf="@id/frag_setting_main_app_version_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/frag_setting_main_app_version_title"
+            tools:ignore="SpUsage" />
+
+        <TextView
+            android:id="@+id/frag_setting_main_sign_out"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/frag_setting_main_sign_out"
+            android:textColor="@color/colorBlack100"
+            android:textSize="@dimen/dp_14"
+            app:layout_constraintStart_toStartOf="@id/frag_setting_main_app_version_title"
+            app:layout_constraintTop_toBottomOf="@id/frag_setting_main_app_version_title"
+            tools:ignore="SpUsage" />
+
+        <TextView
+            android:id="@+id/frag_setting_main_withdraw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/frag_setting_main_withdraw"
+            android:textColor="@color/colorBlack100"
+            android:textSize="@dimen/dp_14"
+            app:layout_constraintStart_toStartOf="@id/frag_setting_main_sign_out"
+            app:layout_constraintTop_toBottomOf="@id/frag_setting_main_sign_out"
+            tools:ignore="SpUsage" />
+
+        <View
+            android:id="@+id/frag_setting_main_divider_2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:background="@color/colorGreyVeryLight"
+            app:layout_constraintTop_toBottomOf="@id/frag_setting_main_withdraw" />
+
+        <Button
+            android:id="@+id/frag_setting_main_restore"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:background="@drawable/bg_btn_setting"
+            android:text="@string/restore"
+            android:textColor="@color/colorBlack100"
+            android:textSize="@dimen/dp_14"
+            android:stateListAnimator="@null"
+            app:layout_constraintWidth_percent="0.42"
+            app:layout_constraintStart_toStartOf="@id/frag_setting_main_divider_2"
+            app:layout_constraintTop_toBottomOf="@id/frag_setting_main_divider_2"
+            tools:ignore="SpUsage" />
+
+        <Button
+            android:id="@+id/frag_setting_main_back_up"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/back_up"
+            android:textColor="@color/colorBlack100"
+            android:textSize="@dimen/dp_14"
+            android:background="@drawable/bg_btn_setting"
+            android:stateListAnimator="@null"
+            app:layout_constraintWidth_percent="0.42"
+            app:layout_constraintTop_toTopOf="@id/frag_setting_main_restore"
+            app:layout_constraintBottom_toBottomOf="@id/frag_setting_main_restore"
+            app:layout_constraintEnd_toEndOf="@id/frag_setting_main_divider_2"
+            tools:ignore="SpUsage"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

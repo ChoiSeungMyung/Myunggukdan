@@ -49,6 +49,25 @@ class SignUpThirdFragment(
                 }
             })
         }
+
+        signViewModel.run {
+            enableSignUp.observe(viewLifecycleOwner, {
+                when(it){
+                    true -> {
+                        binding.fragSignUp3BtnChoice.apply{
+                            isClickable = true
+                            setBackgroundResource(R.drawable.bg_btn)
+                        }
+                    }
+                    false -> {
+                        binding.fragSignUp3BtnChoice.apply{
+                            isClickable = false
+                            setBackgroundResource(R.drawable.bg_btn_off)
+                        }
+                    }
+                }
+            })
+        }
     }
 
     companion object {

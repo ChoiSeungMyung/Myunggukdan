@@ -3,6 +3,11 @@
     <string name="app_name">냥비요정</string>
     <!-- Toast description   -->
     <string name="toast_back_pressed">한번 더 이전 버튼을 누르면 앱을 종료합니다</string>
+    <string name="toast_exist_email">중복된 이메일 입니다</string>
+    <string name="toast_confirm_info">입력 정보를 다시 확인 해 주세요</string>
+    <string name="toast_only_digits">숫자만 입력해 주세요</string>
+    <string name="toast_check_day_range">날짜 범위를 다시 확인해 주세요</string>
+
     <!-- Bottom navigation title   -->
     <string name="bottom_navigation_home_title">홈</string>
     <string name="bottom_navigation_ranking_title">랭킹</string>

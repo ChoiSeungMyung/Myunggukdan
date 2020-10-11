@@ -49,7 +49,6 @@ class SignUpWrapperFragment(
 
         signViewModel.run {
             enableSignUp.observe(viewLifecycleOwner, {
-                loge("$it")
                 when(it) {
                     true -> {
 //                        binding.fragSignUpViewPager.currentItem = 1

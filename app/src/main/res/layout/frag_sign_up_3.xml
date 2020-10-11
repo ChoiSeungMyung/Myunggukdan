@@ -100,7 +100,7 @@
             android:text="@string/frag_sign_up_3_btn_choice"
             android:textColor="@color/colorWhite100"
             android:textSize="@dimen/dp_18"
-            android:onClick="@{() -> signViewModelBinding.postValueSignState(SignState.SignSuccess)}"
+            android:onClick="@{() -> signViewModelBinding.trySignUp()}"
             app:layout_constraintBottom_toBottomOf="parent"
             tools:ignore="SpUsage" />
 

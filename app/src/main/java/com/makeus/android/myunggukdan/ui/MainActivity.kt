@@ -3,7 +3,6 @@ package com.makeus.android.myunggukdan.ui
 import android.os.Bundle
 import android.os.Handler
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
@@ -12,7 +11,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.makeus.android.myunggukdan.R
 import com.makeus.android.myunggukdan.databinding.ActMainBinding
 import com.makeus.android.myunggukdan.extension.clearBackStack
-import com.makeus.android.myunggukdan.extension.loge
 import com.makeus.android.myunggukdan.extension.makeToast
 import com.makeus.android.myunggukdan.ui.fragment.AddWasteItemFragment
 import com.makeus.android.myunggukdan.ui.fragment.SplashFragment
@@ -21,7 +19,6 @@ import com.makeus.android.myunggukdan.ui.fragment.ranking.RankingFragment
 import com.makeus.android.myunggukdan.ui.fragment.setting.SettingFragment
 import com.makeus.android.myunggukdan.ui.fragment.sign.ChoiceSignFragment
 import com.makeus.android.myunggukdan.ui.fragment.sign.SignInFragment
-import com.makeus.android.myunggukdan.ui.fragment.sign.up.SignUpThirdFragment
 import com.makeus.android.myunggukdan.ui.fragment.sign.up.SignUpWrapperFragment
 import com.makeus.android.myunggukdan.viewmodel.HistoryViewModel
 import com.makeus.android.myunggukdan.viewmodel.SignViewModel
@@ -153,8 +150,8 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         })
 
 
-        signViewModel.testToast.observe(this, {
-            Toast.makeText(this, it, Toast.LENGTH_LONG).show()
+        signViewModel.makeToast.observe(this, {
+            makeToast(it)
         })
     }
 

@@ -5,9 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
+import androidx.core.text.isDigitsOnly
 import androidx.fragment.app.Fragment
 import com.makeus.android.myunggukdan.R
 import com.makeus.android.myunggukdan.databinding.FragSignUp2Binding
+import com.makeus.android.myunggukdan.extension.makeToast
 import com.makeus.android.myunggukdan.viewmodel.SignViewModel
 
 class SignUpSecondFragment(
@@ -42,6 +44,45 @@ class SignUpSecondFragment(
             signViewModelBinding = signViewModel
             fragSignUp2EditSetAmount.onFocusChangeListener = editTextFocusListener
             fragSignUp2EditStartDay.onFocusChangeListener = editTextFocusListener
+        }
+
+        signViewModel.run {
+            wasteAmount.observe(viewLifecycleOwner, {
+                when (it.isDigitsOnly()) {
+                    true -> {
+                        postValueEnableStartDay(true)
+                        binding.fragSignUp2IcAmountCheck.setImageResource(R.drawable.ic_check_on)
+                    }
+                    false -> {
+                        postValueEnableStartDay(false)
+                        requireContext().makeToast(getString(R.string.toast_only_digits))
+                        binding.fragSignUp2IcAmountCheck.setImageResource(R.drawable.ic_check_off)
+                    }
+                }
+            })
+
+            startDay.observe(viewLifecycleOwner, {
+                when (it.isDigitsOnly()) {
+                    true -> {
+                        when (it.toInt() in 31 downTo 1) {
+                            true -> {
+                                postValueEnableWasteAmount(true)
+                                binding.fragSignUpIcStartDayCheck.setImageResource(R.drawable.ic_check_on)
+                            }
+                            false -> {
+                                postValueEnableWasteAmount(false)
+                                requireContext().makeToast(getString(R.string.toast_check_day_range))
+                                binding.fragSignUpIcStartDayCheck.setImageResource(R.drawable.ic_check_off)
+                            }
+                        }
+                    }
+                    false -> {
+                        postValueEnableWasteAmount(false)
+                        requireContext().makeToast(getString(R.string.toast_only_digits))
+                        binding.fragSignUpIcStartDayCheck.setImageResource(R.drawable.ic_check_off)
+                    }
+                }
+            })
         }
     }
 

@@ -1,6 +1,7 @@
 package com.makeus.android.myunggukdan.ui
 
 import android.os.Bundle
+import android.os.Handler
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -10,6 +11,9 @@ import androidx.lifecycle.lifecycleScope
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.makeus.android.myunggukdan.R
 import com.makeus.android.myunggukdan.databinding.ActMainBinding
+import com.makeus.android.myunggukdan.extension.clearBackStack
+import com.makeus.android.myunggukdan.extension.loge
+import com.makeus.android.myunggukdan.extension.makeToast
 import com.makeus.android.myunggukdan.ui.fragment.AddWasteItemFragment
 import com.makeus.android.myunggukdan.ui.fragment.SplashFragment
 import com.makeus.android.myunggukdan.ui.fragment.home.HomeFragment
@@ -76,14 +80,18 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         lifecycleScope.launchWhenResumed {
             supportFragmentManager
                 .beginTransaction()
-//                .replace(R.id.main_content_layout, splashFragment)
-                .replace(R.id.main_content_layout, SignUpWrapperFragment(signViewModel))
+                .replace(R.id.main_content_layout, splashFragment)
+//                .replace(R.id.main_content_layout, SignUpWrapperFragment(signViewModel))
+//                .replace(R.id.main_content_layout, homeFragment)
                 .commit()
         }
 
         signViewModel.signState.observe(this@MainActivity, {
             when (it) {
                 SignViewModel.SignState.SignSuccess -> {
+                    if (supportFragmentManager.backStackEntryCount > 0) {
+                        supportFragmentManager.clearBackStack()
+                    }
                     supportFragmentManager
                         .beginTransaction()
                         .replace(R.id.main_content_layout, homeFragment)
@@ -174,6 +182,16 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
             }
         }
         return true
+    }
+
+    override fun onBackPressed() {
+        if (mainViewModel.exitFlag || supportFragmentManager.backStackEntryCount > 0) {
+            super.onBackPressed()
+            return
+        }
+        mainViewModel.exitFlag = true
+        makeToast(getString(R.string.toast_back_pressed))
+        Handler().postDelayed({ mainViewModel.exitFlag = false }, 2000)
     }
 
     override fun onStop() {

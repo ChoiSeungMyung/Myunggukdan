@@ -16,6 +16,7 @@ class WasteItemView(context: Context, attrs: AttributeSet) : ConstraintLayout(co
         val typedArray = context.obtainStyledAttributes(attrs, R.styleable.WasteItemView, 0, 0)
         try {
             val drawable = typedArray.getDrawable(R.styleable.WasteItemView_waste_item_icon)
+
             Glide.with(this)
                 .load(drawable)
                 .into(waste_item_icon)

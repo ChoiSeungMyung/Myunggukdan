@@ -22,4 +22,7 @@ object RetrofitHelper {
     // User Service
     fun signIn(idx: String, password: String) =
         userService.userSignIn(idx, password)
+
+    fun signUp(email: String, password: String, nickName: String, wasteAmount: Int, startDay: Int, character: Int) =
+        userService.userSignUp(email, password, nickName, wasteAmount, startDay, character)
 }

@@ -1,4 +1,4 @@
-package com.makeus.android.myunggukdan.data
+package com.makeus.android.myunggukdan.data.retrofit
 
 data class SignInResult(
     val jwt: String,

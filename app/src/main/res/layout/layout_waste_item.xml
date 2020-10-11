@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/waste_item_root"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:background="@drawable/border_waste_item_off"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/waste_item_root"
+    android:background="@drawable/border_waste_item_off"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
 
     <ImageView
         android:id="@+id/waste_item_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp_6"
         android:layout_marginStart="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_6"
         android:layout_marginEnd="@dimen/dp_20"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/ic_beer"
-        tools:ignore="ContentDescription"/>
+        tools:ignore="ContentDescription"
+        tools:src="@drawable/ic_beer" />
 
     <TextView
         android:id="@+id/waste_item_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/dp_4"
         android:layout_marginTop="@dimen/dp_6"
-        app:layout_constraintStart_toStartOf="@id/waste_item_icon"
-        app:layout_constraintEnd_toEndOf="@id/waste_item_icon"
-        app:layout_constraintTop_toBottomOf="@id/waste_item_icon"
+        android:layout_marginBottom="@dimen/dp_4"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:text="술"/>
+        app:layout_constraintEnd_toEndOf="@id/waste_item_icon"
+        app:layout_constraintStart_toStartOf="@id/waste_item_icon"
+        app:layout_constraintTop_toBottomOf="@id/waste_item_icon"
+        tools:text="술" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">냥비요정</string>
-
+    <!-- Toast description   -->
+    <string name="toast_back_pressed">한번 더 이전 버튼을 누르면 앱을 종료합니다</string>
     <!-- Bottom navigation title   -->
     <string name="bottom_navigation_home_title">홈</string>
     <string name="bottom_navigation_ranking_title">랭킹</string>

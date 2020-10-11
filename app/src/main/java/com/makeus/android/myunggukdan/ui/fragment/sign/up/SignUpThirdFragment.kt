@@ -33,14 +33,17 @@ class SignUpThirdFragment(
                 ViewPager2.OnPageChangeCallback() {
                 override fun onPageSelected(position: Int) {
                     super.onPageSelected(position)
+//                    TODO: (0번 - 치즈냥, 1번 - 그레냥)으로 서버랑 맞추기 reason: 페이저 어댑터 포지션으로 맞추는게 편함
                     when (position) {
                         0 -> {
                             fragSignUpIndicator1.setImageResource(R.drawable.indicator_on)
                             fragSignUpIndicator2.setImageResource(R.drawable.indicator_off)
+                            signViewModel.postValueCharacter(position + 1)
                         }
                         1 -> {
                             fragSignUpIndicator1.setImageResource(R.drawable.indicator_off)
                             fragSignUpIndicator2.setImageResource(R.drawable.indicator_on)
+                            signViewModel.postValueCharacter(position + 1)
                         }
                     }
                 }

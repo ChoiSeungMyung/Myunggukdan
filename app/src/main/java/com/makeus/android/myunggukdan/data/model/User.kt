@@ -1,4 +1,4 @@
-package com.makeus.android.myunggukdan.data
+package com.makeus.android.myunggukdan.data.model
 
 data class User(
     val email: String,

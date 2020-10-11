@@ -3,6 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="wasteList"
+            type="com.makeus.android.myunggukdan.data.WasteItemList" />
+    </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/frag_add_wasteitem_root"
         android:layout_width="match_parent"
@@ -83,6 +88,7 @@
                 app:layout_constraintEnd_toStartOf="@id/waste_item_cigarette"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                app:waste_item_background="@{wasteList.wasteItemList.get(0).isSelected()}"
                 app:waste_item_icon="@drawable/ic_beer"
                 app:waste_item_text="@string/waste_item_alcohol" />
 
@@ -94,6 +100,7 @@
                 app:layout_constraintEnd_toStartOf="@id/waste_item_coffee"
                 app:layout_constraintStart_toEndOf="@id/waste_item_alcohol"
                 app:layout_constraintTop_toTopOf="@id/waste_item_alcohol"
+                app:waste_item_background="@{wasteList.wasteItemList.get(1).isSelected()}"
                 app:waste_item_icon="@drawable/ic_cigarette"
                 app:waste_item_text="@string/waste_item_cigarette" />
 
@@ -106,6 +113,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/waste_item_cigarette"
                 app:layout_constraintTop_toTopOf="@id/waste_item_cigarette"
+                app:waste_item_background="@{wasteList.wasteItemList.get(2).isSelected()}"
                 app:waste_item_icon="@drawable/ic_coffee"
                 app:waste_item_text="@string/waste_item_coffee" />
 
@@ -118,6 +126,7 @@
                 app:layout_constraintEnd_toStartOf="@id/waste_item_snack"
                 app:layout_constraintStart_toStartOf="@id/waste_item_alcohol"
                 app:layout_constraintTop_toBottomOf="@id/waste_item_alcohol"
+                app:waste_item_background="@{wasteList.wasteItemList.get(3).isSelected()}"
                 app:waste_item_icon="@drawable/ic_shopping"
                 app:waste_item_text="@string/waste_item_shopping" />
 
@@ -129,6 +138,7 @@
                 app:layout_constraintEnd_toStartOf="@id/waste_item_taxi"
                 app:layout_constraintStart_toEndOf="@id/waste_item_shopping"
                 app:layout_constraintTop_toTopOf="@id/waste_item_shopping"
+                app:waste_item_background="@{wasteList.wasteItemList.get(4).isSelected()}"
                 app:waste_item_icon="@drawable/ic_snack"
                 app:waste_item_text="@string/waste_item_snack" />
 
@@ -141,6 +151,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/waste_item_snack"
                 app:layout_constraintTop_toTopOf="@id/waste_item_snack"
+                app:waste_item_background="@{wasteList.wasteItemList.get(5).isSelected()}"
                 app:waste_item_icon="@drawable/ic_taxi"
                 app:waste_item_text="@string/waste_item_taxi" />
 
@@ -154,6 +165,7 @@
                 app:layout_constraintEnd_toStartOf="@id/waste_item_game"
                 app:layout_constraintStart_toStartOf="@id/waste_item_shopping"
                 app:layout_constraintTop_toBottomOf="@id/waste_item_shopping"
+                app:waste_item_background="@{wasteList.wasteItemList.get(6).isSelected()}"
                 app:waste_item_icon="@drawable/ic_latefood"
                 app:waste_item_text="@string/waste_item_latefood" />
 
@@ -165,6 +177,7 @@
                 app:layout_constraintEnd_toStartOf="@id/waste_item_etc"
                 app:layout_constraintStart_toEndOf="@id/waste_item_latefood"
                 app:layout_constraintTop_toTopOf="@id/waste_item_latefood"
+                app:waste_item_background="@{wasteList.wasteItemList.get(7).isSelected()}"
                 app:waste_item_icon="@drawable/ic_game"
                 app:waste_item_text="@string/waste_item_game" />
 
@@ -177,6 +190,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/waste_item_game"
                 app:layout_constraintTop_toTopOf="@id/waste_item_game"
+                app:waste_item_background="@{wasteList.wasteItemList.get(8).isSelected()}"
                 app:waste_item_icon="@drawable/ic_money"
                 app:waste_item_text="@string/waste_item_etc" />
 

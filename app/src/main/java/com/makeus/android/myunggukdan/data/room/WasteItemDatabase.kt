@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.room.*
 import com.google.gson.Gson
 import com.makeus.android.myunggukdan.data.DB_WASTE_ITEM
-import com.makeus.android.myunggukdan.data.WastedItem
+import com.makeus.android.myunggukdan.data.model.WastedItem
 
 @Database(entities = [WastedItem::class], version = 1, exportSchema = false)
 @TypeConverters(Converters::class)

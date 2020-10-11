@@ -1,9 +1,7 @@
 package com.makeus.android.myunggukdan.data.room
 
-import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.makeus.android.myunggukdan.data.DB_WASTE_ITEM
-import com.makeus.android.myunggukdan.data.WastedItem
+import com.makeus.android.myunggukdan.data.model.WastedItem
 
 @Dao
 interface WasteItemDao {

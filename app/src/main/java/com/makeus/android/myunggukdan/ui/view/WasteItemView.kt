@@ -51,13 +51,4 @@ class WasteItemView(context: Context, attrs: AttributeSet) : ConstraintLayout(co
             typedArray.recycle()
         }
     }
-
-    fun setImage(resource: Int) =
-        Glide.with(this)
-            .load(resource)
-            .into(waste_item_icon)
-
-    fun setText(text: String) {
-        waste_item_text.text = text
-    }
 }

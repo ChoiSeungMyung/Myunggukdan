@@ -76,6 +76,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginTop="@dimen/dp_12"
+            android:foregroundGravity="center"
             app:layout_constraintBottom_toTopOf="@id/add_waste_item_memo_title"
             app:layout_constraintTop_toBottomOf="@id/add_waste_item_content_title">
 
@@ -108,7 +109,6 @@
                 android:id="@+id/waste_item_coffee"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:layout_marginEnd="@dimen/dp_16"
                 app:layout_constraintBottom_toBottomOf="@id/waste_item_cigarette"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/waste_item_cigarette"
@@ -146,7 +146,6 @@
                 android:id="@+id/waste_item_taxi"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:layout_marginEnd="@dimen/dp_16"
                 app:layout_constraintBottom_toBottomOf="@id/waste_item_snack"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/waste_item_snack"
@@ -185,7 +184,6 @@
                 android:id="@+id/waste_item_etc"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:layout_marginEnd="@dimen/dp_16"
                 app:layout_constraintBottom_toBottomOf="@id/waste_item_game"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/waste_item_game"

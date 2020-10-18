@@ -8,14 +8,53 @@
         android:layout_height="match_parent">
 
         <TextView
+            android:id="@+id/frag_home_statistics_range"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/frag_home_statistics_title"
-            android:textSize="@dimen/dp_32"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:text="@string/week"
+            android:layout_marginTop="@dimen/dp_18"
+            android:layout_marginStart="@dimen/dp_16"
+            android:textColor="@color/colorPrimary"
+            android:fontFamily="sans-serif-black"
+            android:textSize="@dimen/dp_20"
             app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="SpUsage" />
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="SpUsage"/>
+        <TextView
+            android:id="@+id/frag_home_statistics_range_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/frag_home_statistics_range_description"
+            android:textColor="@color/colorBlack100"
+            android:textSize="@dimen/dp_18"
+            android:layout_marginStart="@dimen/dp_2"
+            app:layout_constraintTop_toTopOf="@id/frag_home_statistics_range"
+            app:layout_constraintBottom_toBottomOf="@id/frag_home_statistics_range"
+            app:layout_constraintStart_toEndOf="@id/frag_home_statistics_range"
+            tools:ignore="SpUsage"/>
+        <TextView
+            android:id="@+id/frag_home_statistics_total_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0원"
+            android:textSize="@dimen/dp_20"
+            android:textColor="@color/colorBlack100"
+            android:fontFamily="sans-serif-black"
+            app:layout_constraintTop_toBottomOf="@id/frag_home_statistics_range"
+            app:layout_constraintStart_toStartOf="@id/frag_home_statistics_range"
+            tools:ignore="SpUsage"/>
+
+        <TextView
+            android:id="@+id/frag_home_statistics_total_amount_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack100"
+            android:textSize="@dimen/dp_18"
+            android:layout_marginStart="@dimen/dp_2"
+            android:text="@string/frag_home_statistics_total_amount_description"
+            app:layout_constraintTop_toTopOf="@id/frag_home_statistics_total_amount"
+            app:layout_constraintBottom_toBottomOf="@id/frag_home_statistics_total_amount"
+            app:layout_constraintStart_toEndOf="@id/frag_home_statistics_total_amount"
+            tools:ignore="SpUsage"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

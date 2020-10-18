@@ -49,6 +49,10 @@
     <string name="nickname_hint">김낭비</string>
     <string name="restore">복원</string>
     <string name="back_up">백업</string>
+    <string name="week">이번 주</string>
+    <string name="month">이번 달</string>
+    <string name="year">올 해</string>
+    <string name="whole_day">전체 기간</string>
 
     <string name="frag_home_history_wasteful_text">%s님 오늘 하루</string>
     <string name="frag_home_history_wasteful_description"> 을 낭비했어요!</string>
@@ -119,6 +123,9 @@
 
     <string name="frag_choice_grey_title">괜찮다냥 나랑 앞으로 천천히 줄여나가보자냥</string>
     <string name="frag_choice_grey_description">‘쓴소리는 오히려 악효과가 있는법!’ 이라고 생각하는 당신을 위해\n그레냥과 함께 부드러우면서도 순조로운 낭비습관 고치기!</string>
+
+    <string name="frag_home_statistics_range_description">동안</string>
+    <string name="frag_home_statistics_total_amount_description">을 낭비 했어요!</string>
     <!-- ControlBar Description -->
     <string name="add_waste">낭비추가</string>
 

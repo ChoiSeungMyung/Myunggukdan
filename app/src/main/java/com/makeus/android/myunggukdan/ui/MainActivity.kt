@@ -1,10 +1,14 @@
 package com.makeus.android.myunggukdan.ui
 
+import android.app.admin.DevicePolicyManager
+import android.content.Context
 import android.os.Bundle
 import android.os.Handler
 import android.view.MenuItem
+import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -21,9 +25,10 @@ import com.makeus.android.myunggukdan.ui.fragment.sign.ChoiceSignFragment
 import com.makeus.android.myunggukdan.ui.fragment.sign.SignInFragment
 import com.makeus.android.myunggukdan.ui.fragment.sign.up.SignUpWrapperFragment
 import com.makeus.android.myunggukdan.viewmodel.HistoryViewModel
-import com.makeus.android.myunggukdan.viewmodel.SignViewModel
 import com.makeus.android.myunggukdan.viewmodel.MainViewModel
+import com.makeus.android.myunggukdan.viewmodel.SignViewModel
 import kotlinx.android.synthetic.main.act_main.*
+
 
 class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener {
     private lateinit var binding: ActMainBinding
@@ -67,6 +72,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.act_main)
+
         binding = DataBindingUtil.setContentView(this, R.layout.act_main)
         binding.run {
             historyViewModelBinding = homeFragment.historyViewModel
@@ -83,7 +89,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
                 .commit()
         }
 
-        signViewModel.signState.observe(this@MainActivity, {
+        signViewModel.signState.observe(this@MainActivity, Observer {
             when (it) {
                 SignViewModel.SignState.SignSuccess -> {
                     if (supportFragmentManager.backStackEntryCount > 0) {
@@ -137,7 +143,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
 
         main_bottom_navigation.setOnNavigationItemSelectedListener(this)
 
-        homeFragment.historyViewModel.addWastedItem.observe(this, {
+        homeFragment.historyViewModel.addWastedItem.observe(this, Observer {
             when (it) {
                 true -> {
                     supportFragmentManager
@@ -150,7 +156,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         })
 
 
-        signViewModel.makeToast.observe(this, {
+        signViewModel.makeToast.observe(this, Observer {
             makeToast(it)
         })
     }

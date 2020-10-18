@@ -6,13 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.children
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import com.makeus.android.myunggukdan.R
 import com.makeus.android.myunggukdan.data.WasteItemList
-import com.makeus.android.myunggukdan.data.model.WasteItem
 import com.makeus.android.myunggukdan.databinding.FragAddWasteitemBinding
-import com.makeus.android.myunggukdan.extension.loge
 import com.makeus.android.myunggukdan.ui.view.WasteItemView
 import com.makeus.android.myunggukdan.viewmodel.HistoryViewModel
+import com.makeus.android.myunggukdan.viewmodel.InputViewModel
 import kotlinx.android.synthetic.main.frag_add_wasteitem.*
 import kotlinx.android.synthetic.main.layout_controller_bar.view.*
 import kotlinx.android.synthetic.main.layout_waste_item.view.*
@@ -21,6 +22,9 @@ import kotlinx.android.synthetic.main.layout_waste_item.view.*
 class AddWasteItemFragment(private val historyViewModel: HistoryViewModel) : Fragment(), View.OnClickListener {
     private lateinit var binding: FragAddWasteitemBinding
     private val itemViewList: ArrayList<WasteItemView> = ArrayList()
+    private val inputViewModel by lazy {
+        ViewModelProvider(this).get(InputViewModel::class.java)
+    }
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -48,19 +52,25 @@ class AddWasteItemFragment(private val historyViewModel: HistoryViewModel) : Fra
                 }
                 it.setOnClickListener(this@AddWasteItemFragment)
             }
-//            add_waste_item_waste_amount_input.setOnClickListener {
-//                showInputView = !showInputView
-//                when (showInputView) {
-//                    true -> {
-//                        dialogWrapper.visibility = View.VISIBLE
-//                        frag_add_wasteitem_root.isClickable = false
-//                    }
-//                    false -> {
-//                        dialogWrapper.visibility = View.GONE
-//                        frag_add_wasteitem_root.isClickable = true
-//                    }
-//                }
-//            }
+            add_waste_item_waste_amount_input.setOnClickListener {
+                showInputView = !showInputView
+                when (showInputView) {
+                    true -> {
+                        dialogWrapper.visibility = View.VISIBLE
+                        frag_add_wasteitem_root.isClickable = false
+                    }
+                    false -> {
+                        dialogWrapper.visibility = View.GONE
+                        frag_add_wasteitem_root.isClickable = true
+                    }
+                }
+            }
+
+            dialog.inputViewModelBinding = inputViewModel
+
+            inputViewModel.amount.observe(viewLifecycleOwner, Observer {
+                dialog.inputDialogTextAmount.text = it
+            })
         }
     }
 

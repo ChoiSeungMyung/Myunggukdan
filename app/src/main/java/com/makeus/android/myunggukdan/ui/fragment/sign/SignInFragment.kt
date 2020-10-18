@@ -3,11 +3,13 @@ package com.makeus.android.myunggukdan.ui.fragment.sign
 import android.os.Bundle
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
+import android.util.Patterns
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import com.makeus.android.myunggukdan.R
 import com.makeus.android.myunggukdan.databinding.FragSignInBinding
 import com.makeus.android.myunggukdan.viewmodel.SignViewModel
@@ -64,9 +66,9 @@ class SignInFragment(private val signViewModel: SignViewModel) : Fragment() {
         }
 
         signViewModel.run {
-            email.observe(viewLifecycleOwner, {
+            email.observe(viewLifecycleOwner, Observer {
                 frag_sign_in_ic_email_check.apply {
-                    when (android.util.Patterns.EMAIL_ADDRESS.matcher(it).matches()) {
+                    when (Patterns.EMAIL_ADDRESS.matcher(it).matches()) {
                         true -> {
                             postValueEnableEmail(true)
                             setImageResource(R.drawable.ic_check_on)
@@ -80,7 +82,7 @@ class SignInFragment(private val signViewModel: SignViewModel) : Fragment() {
                 getValueEnableSignIn()
             })
 
-            password.observe(viewLifecycleOwner, {
+            password.observe(viewLifecycleOwner, Observer {
                 frag_sign_in_ic_password_check.apply {
                     when (passwordRegex.matches(it)) {
                         true -> {
@@ -96,7 +98,7 @@ class SignInFragment(private val signViewModel: SignViewModel) : Fragment() {
                 getValueEnableSignIn()
             })
 
-            enableSignIn.observe(viewLifecycleOwner, {
+            enableSignIn.observe(viewLifecycleOwner, Observer {
                 when (it) {
                     true -> {
                         frag_btn_sign_in.apply {

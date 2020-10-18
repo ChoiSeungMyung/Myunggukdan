@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import com.makeus.android.myunggukdan.R
 import com.makeus.android.myunggukdan.databinding.FragSignUp1Binding
 import com.makeus.android.myunggukdan.viewmodel.SignViewModel
@@ -49,9 +50,9 @@ class SignUpFirstFragment(
         }
 
         signViewModel.run {
-            nickname.observe(viewLifecycleOwner, {
+            nickname.observe(viewLifecycleOwner, Observer {
                 frag_sign_up_ic_nick_check.apply {
-                    when(it.isNullOrBlank()) {
+                    when (it.isNullOrBlank()) {
                         true -> {
                             postValueEnableNickName(false)
                             setImageResource(R.drawable.ic_check_off)
@@ -66,7 +67,7 @@ class SignUpFirstFragment(
                 getValueEnableSignUp()
             })
 
-            email.observe(viewLifecycleOwner, {
+            email.observe(viewLifecycleOwner, Observer {
                 frag_sign_up_ic_email_check.apply {
                     when (android.util.Patterns.EMAIL_ADDRESS.matcher(it).matches()) {
                         true -> {
@@ -82,7 +83,7 @@ class SignUpFirstFragment(
                 getValueEnableSignUp()
             })
 
-            password.observe(viewLifecycleOwner, {
+            password.observe(viewLifecycleOwner, Observer {
                 frag_sign_up_ic_password_check.apply {
                     when (passwordRegex.matches(it)) {
                         true -> {
